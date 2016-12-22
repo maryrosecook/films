@@ -3,26 +3,40 @@
 let fs = require("fs-extra");
 let path = require("path");
 
-const DATA_DIR = path.join(__dirname, "data");
 const DATA_FILENAME = "data.json";
-const DATA_FILEPATH = path.join(DATA_DIR, DATA_FILENAME);
 
-function read() {
-  initDataDirIfNotPresent();
-  return JSON.parse(fs.readFileSync(DATA_FILEPATH));
+let encodeData = JSON.stringify;
+let decodeData = JSON.parse;
+let readData = fs.readFileSync;
+let writeData = fs.writeFileSync;
+
+function read(dataDir) {
+  if (!dataFileExists(dataDir)) {
+    return [];
+  }
+
+  return decodeData(readData(dataFilepath(dataDir)));
 };
 
-function write(listings) {
-  initDataDirIfNotPresent();
-  fs.writeFileSync(DATA_FILEPATH, JSON.stringify(listings));
+function write(dataDir, listings) {
+  initDataDirIfNotPresent(dataDir);
+  writeData(dataFilepath(dataDir), encodeData(listings));
 };
 
-function initDataDirIfNotPresent() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR);
+function initDataDirIfNotPresent(dataDir) {
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir);
   }
 };
 
+function dataFileExists(dataDir) {
+  return fs.existsSync(dataDir) &&
+    fs.existsSync(dataFilepath(dataDir));
+};
+
+function dataFilepath(dataDir) {
+  return path.join(dataDir, DATA_FILENAME);
+};
 
 module.exports = {
   read,
