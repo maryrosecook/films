@@ -1,6 +1,6 @@
 "use strict";
 
-let fs = require("fs");
+let fs = require("fs-extra");
 let path = require("path");
 
 const CINEMAS_PATH = path.join(__dirname, "./cinemas/");

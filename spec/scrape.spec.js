@@ -1,6 +1,6 @@
 "use strict";
 
-let fs = require("fs");
+let fs = require("fs-extra");
 let path = require("path");
 
 let scrape = require("../src/scrape.js");

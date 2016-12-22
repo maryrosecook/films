@@ -1,6 +1,6 @@
 "use strict";
 
-let fs = require("fs");
+let fs = require("fs-extra");
 let path = require("path");
 
 const DATA_DIR = path.join(__dirname, "data");

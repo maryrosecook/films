@@ -2,7 +2,7 @@
 
 let requestPromise = require("request-promise");
 let moment = require("moment");
-let fs = require("fs");
+let fs = require("fs-extra");
 let path = require("path");
 
 let richMix = require("../src/cinemas/rich-mix");
