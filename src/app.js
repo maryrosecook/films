@@ -3,7 +3,7 @@ var app = express();
 const PORT = process.env.FILMS_PORT || 4000;
 
 app.get('/', function (req, res) {
-
+  res.send("hi");
 });
 
 app.listen(PORT, function () {
