@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --harmony node_modules/jasmine-node/lib/jasmine-node/cli.js --color --autotest src/ spec/"
+    "test": "node --harmony node_modules/jasmine-node/lib/jasmine-node/cli.js --color --autotest src/ spec/",
+    "scrape": "node --harmony scripts/scrape.js"
   },
   "author": "",
   "license": "ISC",
