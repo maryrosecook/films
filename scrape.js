@@ -8,7 +8,7 @@ function scrape(cinemas, requestPromise) {
       return cinema.pageContent(requestPromise)
         .then(_.partial(cinema.listings, _, listing));
     }))
-  .then(_.flatten);
+    .then(_.flatten);
 };
 
 module.exports = scrape;
