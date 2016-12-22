@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node --harmony node_modules/jasmine-node/lib/jasmine-node/cli.js --color --autotest src/ spec/",
-    "scrape": "node --harmony scripts/scrape.js"
+    "scrape": "node --harmony scripts/scrape.js",
+    "start": "node --harmony src/app.js"
   },
   "author": "",
   "license": "ISC",
