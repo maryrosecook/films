@@ -2,7 +2,7 @@ var listing = require("./listing");
 
 var _ = require("underscore");
 
-function scrape(cinemas, requestPromise) {
+function listings(cinemas, requestPromise) {
   return Promise.all(
     cinemas.map(function(cinema) {
       return cinema.pageContent(requestPromise)
@@ -11,4 +11,4 @@ function scrape(cinemas, requestPromise) {
     .then(_.flatten);
 };
 
-module.exports = scrape;
+module.exports = listings;

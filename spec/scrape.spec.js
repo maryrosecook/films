@@ -3,7 +3,7 @@
 let fs = require("fs-extra");
 let path = require("path");
 
-let scrape = require("../src/scrape.js");
+let listings = require("../src/listings.js");
 let richMix = require("../src/cinemas/rich-mix.js");
 
 function createRequestPromise(content) {
@@ -14,7 +14,7 @@ function createRequestPromise(content) {
   };
 };
 
-describe("#scrape", function() {
+describe("#listings", function() {
   it("returns listings for two cinemas", function(done) {
     var cinemas = [richMix, richMix];
 
@@ -22,7 +22,7 @@ describe("#scrape", function() {
       path.join(__dirname, "./pages/richmix.org.uk.html"), "utf8");
     var requestPromise = createRequestPromise(pageHtml);
 
-    scrape(cinemas, requestPromise)
+    listings(cinemas, requestPromise)
       .then(function(listings) {
         expect(listings.length).toEqual(932);
         done();
