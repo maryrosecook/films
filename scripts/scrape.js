@@ -16,7 +16,6 @@ listings(cinemas(), requestPromise)
     save(DATA_DIR, listings);
   });
 
-
 function report(listings) {
   console.log(`Saving ${listings.length} listings`);
 };
