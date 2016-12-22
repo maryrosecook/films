@@ -15,7 +15,7 @@ function createRequestPromise(content) {
 };
 
 describe("#scrape", function() {
-  iit("returns listings for two cinemas", function(done) {
+  it("returns listings for two cinemas", function(done) {
     var pageHtml = fs.readFileSync(
       path.join(__dirname, "./pages/richmix.org.uk.html"), "utf8");
 
