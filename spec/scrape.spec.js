@@ -16,11 +16,11 @@ function createRequestPromise(content) {
 
 describe("#scrape", function() {
   it("returns listings for two cinemas", function(done) {
+    var cinemas = [richMix, richMix];
+
     var pageHtml = fs.readFileSync(
       path.join(__dirname, "./pages/richmix.org.uk.html"), "utf8");
-
     var requestPromise = createRequestPromise(pageHtml);
-    var cinemas = [richMix, richMix];
 
     scrape(cinemas, requestPromise)
       .then(function(listings) {
