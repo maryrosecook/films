@@ -3,8 +3,8 @@
 let fs = require("fs");
 let path = require("path");
 
-let scrape = require("../scrape.js");
-let richMix = require("../cinemas/rich-mix.js");
+let scrape = require("../src/scrape.js");
+let richMix = require("../src/cinemas/rich-mix.js");
 
 function createRequestPromise(content) {
   return function() {

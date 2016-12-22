@@ -1,6 +1,6 @@
 "use strict";
 
-let cinemas = require("../cinemas");
+let cinemas = require("../src/cinemas");
 
 describe("#cinemas", function() {
   it("returns array of things w/ cinema interface", function() {

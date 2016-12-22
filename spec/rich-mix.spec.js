@@ -5,8 +5,8 @@ let moment = require("moment");
 let fs = require("fs");
 let path = require("path");
 
-let richMix = require("../cinemas/rich-mix");
-let listing = require("../listing");
+let richMix = require("../src/cinemas/rich-mix");
+let listing = require("../src/listing");
 
 describe("scraping rich mix", function() {
   describe("#url", function() {
