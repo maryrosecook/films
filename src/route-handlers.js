@@ -6,6 +6,8 @@ let path = require("path");
 let mustache = require("mustache");
 
 let db = require("./db");
+let listing = require("./listing");
+let listings = require("./listings");
 
 const dataDir = path.relative(process.cwd(),
                               path.join(__dirname, "../data"));
@@ -13,13 +15,12 @@ const dataDir = path.relative(process.cwd(),
 const indexTemplate = template("index.mustache");
 
 function index(request, response) {
-  let listings = db
-      .read(dataDir)
-      .sort(function(a, b) { return a - b; });
-  response.send(mustache.render(indexTemplate, { listings }));
+  response.send(mustache.render(indexTemplate, {
+    listings: listings.sort(listings(listing, db.read(dataDir)))
+  }));
 };
 
-function listings(request, response) {
+function listingsRoute(request, response) {
   response.json(db.read(dataDir));
 };
 
@@ -32,5 +33,5 @@ function template(templateFilename) {
 
 module.exports = {
   index,
-  listings
+  listings: listingsRoute
 };

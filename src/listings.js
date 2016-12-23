@@ -1,14 +1,15 @@
-var listing = require("./listing");
-
-var _ = require("underscore");
-
-function listings(cinemas, requestPromise) {
-  return Promise.all(
-    cinemas.map(function(cinema) {
-      return cinema.pageContent(requestPromise)
-        .then(_.partial(cinema.listings, _, listing));
-    }))
-    .then(_.flatten);
+function listings(listing, jsonObjects) {
+  return jsonObjects.map(function(obj) {
+    return listing(obj.dateTime, obj.film, obj.cinema);
+  });
 };
+
+function sort(listings) {
+  return listings.sort(function(a, b) {
+    return a.dateTime - b.dateTime;
+  });
+};
+
+listings.sort = sort;
 
 module.exports = listings;
