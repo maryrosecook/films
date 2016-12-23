@@ -14,13 +14,13 @@ const dataDir = path.relative(process.cwd(),
 
 const indexTemplate = template("index.mustache");
 
-function index(request, response) {
+function indexHandler(request, response) {
   response.send(mustache.render(indexTemplate, {
     listings: listings.sort(listings(listing, db.read(dataDir)))
   }));
 };
 
-function listingsRoute(request, response) {
+function listingsHandler(request, response) {
   response.json(db.read(dataDir));
 };
 
@@ -32,6 +32,6 @@ function template(templateFilename) {
 };
 
 module.exports = {
-  index,
-  listings: listingsRoute
+  index: indexHandler,
+  listings: listingsHandler
 };
