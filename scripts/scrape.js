@@ -5,12 +5,12 @@ let path = require("path");
 let requestPromise = require("request-promise");
 
 let cinemas = require("../src/cinemas");
-let listings = require("../src/listings");
+let scrapeListings = require("../src/scrape-listings");
 let db = require("../src/db");
 
 const DATA_DIR = path.join(__dirname, "../data");
 
-listings(cinemas(), requestPromise)
+scrapeListings(cinemas(), requestPromise)
   .then(function(listings) {
     report(listings);
     save(DATA_DIR, listings);
