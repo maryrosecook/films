@@ -16,7 +16,8 @@ const indexTemplate = template("index.mustache");
 
 function indexHandler(request, response) {
   response.send(mustache.render(indexTemplate, {
-    listings: listings.sort(listings(listing, db.read(dataDir)))
+    films: listings.groupByFilm(
+      listings.sort(listings(listing, db.read(dataDir))))
   }));
 };
 
