@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --harmony node_modules/jasmine-node/lib/jasmine-node/cli.js --color --autotest src/ spec/ views/",
+    "test": "nodemon -q -x 'node --harmony node_modules/jasmine/bin/jasmine.js'",
     "scrape": "node --harmony scripts/scrape.js",
     "start": "node --harmony src/app.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jasmine-node": "^1.14.5"
+    "jasmine": "^2.5.2",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
     "cheerio": "^0.22.0",

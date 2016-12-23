@@ -29,7 +29,7 @@ describe("routeHandlers", function() {
   describe("index", function() {
     it("sends html render of listings", function() {
       let db = {
-        read: jasmine.createSpy("read").andReturn(listings)
+        read: jasmine.createSpy("read").and.returnValue(listings)
       };
 
       let routeHandlers = proxyquire("../src/route-handlers", {
@@ -38,7 +38,7 @@ describe("routeHandlers", function() {
 
       routeHandlers.index(requestMock, responseMock);
 
-      let sentHtml = responseMock.send.argsForCall[0][0];
+      let sentHtml = responseMock.send.calls.argsFor(0)[0];
       let $ = cheerio.load(sentHtml);
       let listingNodes = $(".listing");
 
@@ -63,7 +63,7 @@ describe("routeHandlers", function() {
   describe("listings", function() {
     it("sends json of listings", function() {
       let db = {
-        read: jasmine.createSpy("read").andReturn(listings)
+        read: jasmine.createSpy("read").and.returnValue(listings)
       };
 
       let routeHandlers = proxyquire("../src/route-handlers", {
@@ -72,7 +72,7 @@ describe("routeHandlers", function() {
 
       routeHandlers.listings(requestMock, responseMock);
 
-      expect(db.read.argsForCall[0][0]).toEqual("data");
+      expect(db.read.calls.argsFor(0)[0]).toEqual("data");
       expect(responseMock.json)
         .toHaveBeenCalledWith(listings);
     });
