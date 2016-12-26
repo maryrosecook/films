@@ -2,11 +2,11 @@ var listing = require("./listing");
 
 var _ = require("underscore");
 
-function scrapeListings(cinemas, requestPromise) {
+function scrapeListings(listingSources, requestPromise) {
   return Promise.all(
-    cinemas.map(function(cinema) {
-      return cinema.pageContent(requestPromise)
-        .then(_.partial(cinema.listings, _, listing));
+    listingSources.map(function(listingSource) {
+      return listingSource.pageContent(requestPromise)
+        .then(_.partial(listingSource.listings, _, listing));
     }))
     .then(_.flatten);
 };

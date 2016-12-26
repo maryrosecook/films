@@ -4,7 +4,7 @@ let fs = require("fs-extra");
 let path = require("path");
 
 let scrapeListings = require("../src/scrape-listings.js");
-let richMix = require("../src/cinemas/rich-mix.js");
+let richMix = require("../src/listing-sources/rich-mix.js");
 
 function createRequestPromise(content) {
   return function() {

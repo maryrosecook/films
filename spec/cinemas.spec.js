@@ -1,13 +1,13 @@
 "use strict";
 
-let cinemas = require("../src/cinemas");
+let listingSources = require("../src/listing-sources");
 
-describe("#cinemas", function() {
-  it("returns array of things w/ cinema interface", function() {
-    expect(cinemas().length > 0).toEqual(true);
+describe("#listingSources", function() {
+  it("returns array listingSources", function() {
+    expect(listingSources().length > 0).toEqual(true);
 
-    cinemas().forEach(function(cinema) {
-      expect(cinema.pageContent).toBeDefined();
+    listingSources().forEach(function(listingSource) {
+      expect(listingSource.pageContent).toBeDefined();
     });
   });
 });
