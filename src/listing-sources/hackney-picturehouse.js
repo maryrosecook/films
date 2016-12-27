@@ -38,19 +38,28 @@ function filmTitle($, timeNode) {
 };
 
 function dateTime($, timeNode) {
-  let time = $(timeNode).text().trim().replace(".", ":");
-  var zone = moment().format("Z");
-  let dateWithoutHyphens = $(timeNode)
+  let timeStr = extractTime($, timeNode);
+  let dateWithoutHyphensStr =
+      extractDateWithoutHyphensStr($, timeNode);
+  var zoneStr = moment().format("Z");
+
+  var d = dateWithoutHyphensStr;
+  let dateWithHyphensStr =
+      `${d.slice(0, 4)}-${d.slice(4, 6)}-${d.slice(6, 8)}`;
+
+  return `${dateWithHyphensStr}T${timeStr}:00${zoneStr}`;
+};
+
+function extractDateWithoutHyphensStr($, timeNode) {
+  return $(timeNode)
       .closest(".col-xs-12")
       .find(".nav-collapse")
       .attr("id")
       .match(/listings-further-ahead-([^-]*)/)[1];
+};
 
-  var d = dateWithoutHyphens;
-  let dateWithHyphens =
-      `${d.slice(0, 4)}-${d.slice(4, 6)}-${d.slice(6, 8)}`;
-
-  return `${dateWithHyphens}T${time}:00${zone}`;
+function extractTime($, timeNode) {
+  return $(timeNode).text().trim().replace(".", ":");
 };
 
 module.exports = {
