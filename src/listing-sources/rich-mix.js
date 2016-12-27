@@ -38,7 +38,7 @@ function filmTitle($, timeNode) {
 };
 
 function dateTime($, timeNode) {
-  return new Date($(timeNode).attr("content"));
+  return $(timeNode).attr("content");
 };
 
 module.exports = {

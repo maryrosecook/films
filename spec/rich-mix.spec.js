@@ -28,14 +28,14 @@ describe("scraping rich mix", function() {
 
     it("gets first time of first film", function() {
       expect(listings[0])
-        .toEqual(listing(new Date("2016-12-20T11:00:00+00:00"),
+        .toEqual(listing("2016-12-20T11:00:00+00:00",
                          "Rogue One: A Star Wars Story 2D",
                          "Rich Mix"));
     });
 
     it("gets last time of last film", function() {
       expect(_.last(listings))
-        .toEqual(listing(new Date("2017-02-16T19:00:00+00:00"),
+        .toEqual(listing("2017-02-16T19:00:00+00:00",
                          "NT Live: Saint Joan",
                          "Rich Mix"));
     });
