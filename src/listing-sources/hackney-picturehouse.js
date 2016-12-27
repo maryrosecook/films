@@ -41,13 +41,12 @@ function dateTime($, timeNode) {
   let timeStr = extractTime($, timeNode);
   let dateWithoutHyphensStr =
       extractDateWithoutHyphensStr($, timeNode);
-  var zoneStr = moment().format("Z");
 
   var d = dateWithoutHyphensStr;
   let dateWithHyphensStr =
       `${d.slice(0, 4)}-${d.slice(4, 6)}-${d.slice(6, 8)}`;
 
-  return `${dateWithHyphensStr}T${timeStr}:00${zoneStr}`;
+  return `${dateWithHyphensStr}T${timeStr}:00Z`;
 };
 
 function extractDateWithoutHyphensStr($, timeNode) {

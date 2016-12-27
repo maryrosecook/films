@@ -21,14 +21,14 @@ describe("scraping hackney picturehouse", function() {
 
   it("gets first time of first film", function() {
     expect(listings[0])
-      .toEqual(listing("2016-12-27T21:10:00+00:00",
+      .toEqual(listing("2016-12-27T21:10:00Z",
                        "Paterson [15]",
                        "Hackney Picturehouse"));
   });
 
   it("gets last time of last film", function() {
     expect(_.last(listings))
-      .toEqual(listing("2017-08-09T19:00:00+00:00",
+      .toEqual(listing("2017-08-09T19:00:00Z",
                        "RSC Live: Titus Andronicus [12A]",
                        "Hackney Picturehouse"));
   });
