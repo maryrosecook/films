@@ -7,7 +7,7 @@ describe("#listingSources", function() {
     expect(listingSources().length > 0).toEqual(true);
 
     listingSources().forEach(function(listingSource) {
-      expect(listingSource.pageContent).toBeDefined();
+      expect(listingSource.listings).toBeDefined();
     });
   });
 });
