@@ -8,8 +8,7 @@ const LISTING_SOURCES_PATH = path.join(__dirname,
 
 const LISTING_SOURCE_FILENAMES = [
   "hackney-picturehouse.js",
-  "rich-mix.js",
-  "rio.js"
+  "rich-mix.js"
 ];
 
 function listingSources() {
