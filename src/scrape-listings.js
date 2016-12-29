@@ -5,8 +5,7 @@ var _ = require("underscore");
 function scrapeListings(listingSources, requestPromise) {
   return Promise.all(
     listingSources.map(function(listingSource) {
-      return listingSource.pageContent(requestPromise)
-        .then(_.partial(listingSource.listings, _, listing));
+      return listingSource.listings(requestPromise, listing);
     }))
     .then(_.flatten);
 };

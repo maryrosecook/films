@@ -16,7 +16,12 @@ function pageContent(requestPromise) {
   return requestPromise(url(Date.now()));
 };
 
-function listings(pageContent, listing) {
+function listings(requestPromise, listing) {
+  return pageContent(requestPromise)
+    .then(_.partial(extractListings, listing));
+};
+
+function extractListings(listing, pageContent) {
   var $ = cheerio.load(pageContent);
   return allDateTimes($)
     .map(function(timeNode) {
@@ -62,7 +67,5 @@ function extractTime($, timeNode) {
 };
 
 module.exports = {
-  pageContent,
-  listings,
-  url
+  listings
 };
