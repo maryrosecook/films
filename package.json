@@ -12,7 +12,9 @@
   "license": "ISC",
   "devDependencies": {
     "jasmine": "^2.5.2",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "sinon": "^1.17.6",
+    "sinon-as-promised": "^4.0.2"
   },
   "dependencies": {
     "cheerio": "^0.22.0",
