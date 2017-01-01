@@ -1,14 +1,18 @@
 "use strict";
 
 let cheerio = require("cheerio");
+let moment = require("moment");
 
-function googleListingPageUrls(requestPromise, cinemaName) {
+function googleListingPages(requestPromise, cinemaName) {
   let initialUrl_ = initialUrl(cinemaName);
   return requestPromise(initialUrl_)
     .then((initialPage) => {
-      return [initialUrl_].concat(
+      return [createPage(initialUrl_, 0)].concat(
         listingPagePaths(initialPage)
-          .map(googleUrl));
+          .map(googleUrl)
+          .map((page, i) => {
+            return createPage(page, i + 1);
+          }));
     });
 };
 
@@ -18,6 +22,13 @@ function googleUrl(path) {
 
 function initialUrl(cinemaName) {
   return googleUrl(`/search?q=${cinemaName}`);
+};
+
+function createPage(url, index) {
+  return {
+    url: url,
+    date: moment().startOf("day").add(index, "days")
+  };
 };
 
 function listingPagePaths(initialPage) {
@@ -31,4 +42,4 @@ function listingPageNodes($) {
   return $("._S5j a.fl").toArray();
 };
 
-module.exports = googleListingPageUrls;
+module.exports = googleListingPages;
