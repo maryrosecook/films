@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+      <title>Rio Cinema</title>
+      <!--
+        ____  ____  _    _   __  __     __  ____ __     __  ____ _______ ______ __   __   ___     ________ ______
+      /  __ |/ __ \| |  | |/ __ \\ \   / / /  __|\ \   / //  ___|__   __|  ____|  \_/  |/ ___|   |       //      |
+      | |__ | |  | | |  | | |  | |\ \_/ /  | |__  \ \_/ / | |__    | |  | |____|       | |___    |      //       |
+       \__ || |__| | |  | | |  | | \   /   \__  |  \   /   \__ |   | |  |  ____| |\_/| |\__  |    )     ||      (
+       __| ||  __  | |__| | |__| |  | |     __| |   | |    __| |   | |  | |____| |   | |___| |   |      //       |
+      |____/|_| _|_|\____/ \____/   |_|    |____/   |_|   |____/   |_|  |______|_|   |_|_____/   |_____//________|
+    
+      -->
+      <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="https://riocinema.org.uk/RioCinema/img/favicons/apple-touch-icon-57x57.png"/>
+<link rel="apple-touch-icon" sizes="60x60" href="https://riocinema.org.uk/RioCinema/img/favicons/apple-touch-icon-60x60.png"/>
+<link rel="apple-touch-icon" sizes="72x72" href="https://riocinema.org.uk/RioCinema/img/favicons/apple-touch-icon-72x72.png"/>
+<link rel="apple-touch-icon" sizes="76x76" href="https://riocinema.org.uk/RioCinema/img/favicons/apple-touch-icon-76x76.png"/>
+<link rel="apple-touch-icon" sizes="114x114" href="https://riocinema.org.uk/RioCinema/img/favicons/apple-touch-icon-114x114.png"/>
+<link rel="apple-touch-icon" sizes="120x120" href="https://riocinema.org.uk/RioCinema/img/favicons/apple-touch-icon-120x120.png"/>
+<link rel="apple-touch-icon" sizes="144x144" href="https://riocinema.org.uk/RioCinema/img/favicons/apple-touch-icon-144x144.png"/>
+<link rel="apple-touch-icon" sizes="152x152" href="https://riocinema.org.uk/RioCinema/img/favicons/apple-touch-icon-152x152.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="https://riocinema.org.uk/RioCinema/img/favicons/apple-touch-icon-180x180.png"/>
+<link rel="icon" type="image/png" href="https://riocinema.org.uk/RioCinema/img/favicons/favicon-32x32.png" sizes="32x32"/>
+<link rel="icon" type="image/png" href="https://riocinema.org.uk/RioCinema/img/favicons/android-chrome-192x192.png" sizes="192x192"/>
+<link rel="icon" type="image/png" href="https://riocinema.org.uk/RioCinema/img/favicons/favicon-96x96.png" sizes="96x96"/>
+<link rel="icon" type="image/png" href="https://riocinema.org.uk/RioCinema/img/favicons/favicon-16x16.png" sizes="16x16"/>
+  <!-- Social Media Metas -->
+  <meta property="og:site_name" content="Rio Cinema" /><meta property="og:type" content="website" />
+  <meta name="keywords" content="Rio Cinema, Cinema Dalston, The Rio" />
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Force IE9 to render in normal mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="https://riocinema.org.uk/RioCinema/css/reset.css"/> <!-- CSS reset -->
+    <link rel="stylesheet" href="https://riocinema.org.uk/RioCinema/css/icons.css"/> <!-- Resource style -->
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+    <!-- Owl Carousel Assets -->
+    <link href="https://riocinema.org.uk/RioCinema/assets/owl-carousel/owl.carousel.css" rel="stylesheet"/>
+    <link href="https://riocinema.org.uk/RioCinema/assets/owl-carousel/owl.theme.css" rel="stylesheet"/>
+    <!-- Event Calendar Assets -->
+    <link rel="stylesheet" href="https://riocinema.org.uk/RioCinema/assets/event-calendar/eventCalendar.css"/>
+    <link rel="stylesheet" href="https://riocinema.org.uk/RioCinema/assets/event-calendar/eventCalendar_theme_responsive.css"/>
+      <!--[if lt IE 9]>
+      <script type="text/javascript" src="https://riocinema.org.uk/RioCinema/js/ie/excanvas.min.js"></script>
+      <script type="text/javascript" src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script type="text/javascript" src="https://riocinema.org.uk/RioCinema/js/ie/respond.min.js"></script>
+      <![endif]-->
+    <!-- Modernizr -->
+    <script src="https://riocinema.org.uk/RioCinema/js/modernizr.js"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="https://riocinema.org.uk/RioCinema/js/jquery.js"><\/script>\<script type="text/javascript" src="https://riocinema.org.uk/RioCinema/js/jquery-ui.min.js"><\/script>')</script>
+    <script src="https://riocinema.org.uk/RioCinema/js/jquery.mobile.custom.min.js"></script>
+    <!-- Owl JS Assets -->
+    <script src="https://riocinema.org.uk/RioCinema/assets/owl-carousel/owl.carousel.js"></script>
+    <!-- Event Calendar Assets -->
+    <script src="https://riocinema.org.uk/RioCinema/assets/event-calendar/moment.js" type="text/javascript"></script>
+    <script src="https://riocinema.org.uk/RioCinema/assets/event-calendar/jquery.eventCalendar.min.js" type="text/javascript"></script>
+    <!-- lightbox -->
+    <script src="https://images.savoysystems.co.uk/global/js/lightbox.js"></script>
+    <!-- Dropdown -->
+    <script type="text/javascript" src="https://riocinema.org.uk/RioCinema/js/jquery.dropdown.js"></script>
+    <!-- Scripts -->
+    <script src="https://riocinema.org.uk/RioCinema/js/main.js"></script>
+    <script src="https://riocinema.org.uk/RioCinema/assets/video-embed/jquery-smartvimeoembed.min.js"></script>
+    <script src="https://riocinema.org.uk/RioCinema/js/video.js"></script>
+  <style type="text/css">
+  </style>
+  </head>
+  <body>
+    <header id="header" class="phoenix-main-header row">
+      <a class="phoenix-logo" href="Home">
+        <img src="https://images.savoysystems.co.uk/RIL/7362492.jpg" alt="logo"/>
+      </a>
+      <ul class="phoenix-header-social">
+        <li><a href="http://www.facebook.com/RioCinema" target="_blank"><span class="icon icon-facebook"></span></a></li>
+        <li><a href="http://twitter.com/riocinema" target="_blank"><span class="icon icon-twitter"></span></a></li>
+        <li><a href="http://www.instagram.com/riocinema" target="_blank"><span class="icon icon-instagram"></span></a></li>
+        <li><a href="http://www.youtube.com/user/theriocinema" target="_blank"><span class="icon icon-youtube"></span></a></li>
+        <li><a href="https://uk.pinterest.com/theriocinema/" target="blank"><span class="icon icon-pinterest"></span></a></li>
+      </ul>
+      <ul class="phoenix-header-buttons">
+        <li><a class="phoenix-search-trigger" href="#phoenix-search">Search<span></span></a></li>
+        <li><a class="phoenix-nav-trigger" href="#phoenix-primary-nav">Menu<span></span></a></li>
+      </ul> <!-- phoenix-header-buttons -->
+    </header>
+    <div id="SideBarRow" class="row">
+<div  id="SideBarToggleMenu"  ><div id="opener" class="SideBarToggle"  onclick="return showSideBar('SideBar');">Menu<span class="icon icon-menu"></span></div>
+<div id="closer" class="SideBarToggle" style="display: none;"  onclick="return hideSideBar('SideBar');">Menu<span class="icon icon-menu"></span></div>
+<script type="text/javascript">
+function showSideBar(DivID) {
+  document.getElementById(DivID).style.display='block';
+  document.getElementById('opener').style.display='none';
+  document.getElementById('closer').style.display='block';
+}
+function hideSideBar(DivID) {
+  document.getElementById(DivID).style.display='none';
+  document.getElementById('opener').style.display='block';
+  document.getElementById('closer').style.display='none';
+}
+</script>
+</div><div  id="SideBar"  ><div  id="SideBarHeader"  ></div><div class="SideBarMenu"><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_1015466.TcsWebTab_1015467"><div class="hidden">Tickets</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_5218828.TcsWebTab_5218829"><div class="hidden">Name a Seat</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_5010787.TcsWebTab_5010788"><div class="hidden">Donate</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_5218823.TcsWebTab_5218824"><div class="hidden">Joint Friends</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_5218826.TcsWebTab_5218827"><div class="hidden">Annual Friends</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_5218830.TcsWebTab_5218832"><div class="hidden">Life Membership</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_5218834.TcsWebTab_5218835"><div class="hidden">Gift Membership</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_1015472.TcsWebTab_1015473"><div class="hidden">Booking Information</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_1015474.TcsWebTab_1015475"><div class="hidden">Terms & Conditions</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_5218836.TcsWebTab_5218837"><div class="hidden">Friends Offers and Discounts</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_7329579.TcsWebTab_7329580"><div class="hidden">DoubleBills</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_8181589.TcsWebTab_8181590"><div class="hidden">Newsletter</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_8342959.TcsWebTab_8342960"><div class="hidden">Membership</div></a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_8564067.TcsWebTab_8564068"><div class="hidden">Festival Pass</div></a></div></div><div class="SideBarMenu"><div   class="SideBarFirstHeading" >My Order</div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsSummary">Basket is Empty</a></div></div><div class="SideBarMenu"><div   class="SideBarHeading" >My Account</div><div   class="SideBarItem" ><a href="https://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waLoginPrompt">Log In</a></div><div   class="SideBarItem" ><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waPasswordResetRequestPrompt">Password Reset</a></div><div   class="SideBarItem" ><a href="https://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waRegisterPrompt">Create an Account</a></div></div><div  id="SideBarFooter"  ></div></div>
+    </div>
+    <main id="main" class="phoenix-main-content">
+      <div id="banner" class="banner row">
+        <div id="AdvancedCinemaTemplateRow3" class="eightcol">
+          <div id="home-carousel" class="grid large owl-carousel">
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8968146.jpg" alt="TROLLS"/>
+              <figcaption>
+              <div><a href="WhatsOn?Film=8968148"><h2>TROLLS <span><img class="rating" src="https://riocinema.org.uk/RioCinema/U.png" alt="U"/></span></h2></a></div>
+              <div>
+                <a href="WhatsOn?Film=8968148">Sun 1 Jan to Mon 2 Jan</a><br/>
+                <a href="WhatsOn?Film=8968148" class="button">Book Now</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8961021.jpg" alt="SILENCE"/>
+              <figcaption>
+              <div><a href="WhatsOn?Film=8961023"><h2>SILENCE <span><img class="rating" src="https://riocinema.org.uk/RioCinema/15.png" alt="15"/></span></h2></a></div>
+              <div>
+                <a href="WhatsOn?Film=8961023">Sun 1 Jan to Thu 12 Jan</a><br/>
+                <a href="WhatsOn?Film=8961023" class="button">Book Now</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8895570.jpg" alt="LA LA LAND "/>
+              <figcaption>
+              <div><a href="WhatsOn?Film=8895575"><h2>LA LA LAND  <span><img class="rating" src="https://riocinema.org.uk/RioCinema/12A.png" alt="12A"/></span></h2></a></div>
+              <div>
+                <a href="WhatsOn?Film=8895575">Fri 13 Jan to Thu 26 Jan</a><br/>
+                <a href="WhatsOn?Film=8895575" class="button">Book Now</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8946029.jpg" alt="NT Live: NO MAN'S LAND"/>
+              <figcaption>
+              <div><a href="WhatsOn?Film=8946031"><h2>NT Live: NO MAN'S LAND <span><img class="rating" src="https://riocinema.org.uk/RioCinema/15.png" alt="15"/></span></h2></a></div>
+              <div>
+                <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946100">Sun 15 Jan</a><br/>
+                <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946100" class="button">Book Now</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8985740.jpg" alt="Southside With You"/>
+              <figcaption>
+              <div><a href="WhatsOn?Film=8985683"><h2>Southside With You <span><img class="rating" src="https://riocinema.org.uk/RioCinema/12A.png" alt="12A"/></span></h2></a></div>
+              <div>
+                <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985718">Wed 18 Jan</a><br/>
+                <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985718" class="button">Book Now</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          </div>
+        </div>
+        <div id="AdvancedCinemaTemplateRow4" class="sidebar fourcol last">
+          <h2 class="subtitle first">Quick Book</h2>
+          <p>Please choose film, date and time to book</p>
+          <div class="quick-book">
+          <div class="dropdown-lists">
+          <select id="cd-dropdown-film" class="cd-select active" data-order="3">
+          <option value="-1" selected>Select a Film</option>
+          <option value="Film8895575">LA LA LAND</option>
+          <option value="Film8895871">LA LA LAND P&B</option>
+          <option value="Film8946031">NT Live: NO MAN'S LAND</option>
+          <option value="Film8961023">SILENCE</option>
+          <option value="Film8961026">SILENCE P&B</option>
+          <option value="Film8985683">Southside With You</option>
+          <option value="Film8968148">TROLLS</option>
+          </select>
+          <select id="cd-dropdown-date" class="cd-select film-date" data-order="2">
+          <option class="title" value="-1" selected>Select a Date</option>
+          <option class="Film8895575 " value="Day20170113">Fri Jan 13</option>
+          <option class="Film8895575 " value="Day20170114">Sat Jan 14</option>
+          <option class="Film8895575 " value="Day20170115">Sun Jan 15</option>
+          <option class="Film8895575 " value="Day20170116">Mon Jan 16</option>
+          <option class="Film8895575 " value="Day20170117">Tue Jan 17</option>
+          <option class="Film8895575 " value="Day20170118">Wed Jan 18</option>
+          <option class="Film8895575 " value="Day20170119">Thu Jan 19</option>
+          <option class="Film8895575 " value="Day20170120">Fri Jan 20</option>
+          <option class="Film8895575 " value="Day20170121">Sat Jan 21</option>
+          <option class="Film8895575 " value="Day20170122">Sun Jan 22</option>
+          <option class="Film8895575 " value="Day20170123">Mon Jan 23</option>
+          <option class="Film8895575 " value="Day20170124">Tue Jan 24</option>
+          <option class="Film8895575 " value="Day20170125">Wed Jan 25</option>
+          <option class="Film8895575 " value="Day20170126">Thu Jan 26</option>
+          <option class="Film8895871 " value="Day20170119">Thu Jan 19</option>
+          <option class="Film8895871 " value="Day20170126">Thu Jan 26</option>
+          <option class="Film8946031 " value="Day20170115">Sun Jan 15</option>
+          <option class="Film8961023 " value="Day20170101">Sun Jan 01</option>
+          <option class="Film8961023 " value="Day20170102">Mon Jan 02</option>
+          <option class="Film8961023 " value="Day20170103">Tue Jan 03</option>
+          <option class="Film8961023 " value="Day20170104">Wed Jan 04</option>
+          <option class="Film8961023 " value="Day20170105">Thu Jan 05</option>
+          <option class="Film8961023 " value="Day20170106">Fri Jan 06</option>
+          <option class="Film8961023 " value="Day20170107">Sat Jan 07</option>
+          <option class="Film8961023 " value="Day20170108">Sun Jan 08</option>
+          <option class="Film8961023 " value="Day20170109">Mon Jan 09</option>
+          <option class="Film8961023 " value="Day20170110">Tue Jan 10</option>
+          <option class="Film8961023 " value="Day20170111">Wed Jan 11</option>
+          <option class="Film8961023 " value="Day20170112">Thu Jan 12</option>
+          <option class="Film8961026 " value="Day20170105">Thu Jan 05</option>
+          <option class="Film8961026 " value="Day20170112">Thu Jan 12</option>
+          <option class="Film8985683 " value="Day20170118">Wed Jan 18</option>
+          <option class="Film8968148 " value="Day20170101">Sun Jan 01</option>
+          <option class="Film8968148 " value="Day20170102">Mon Jan 02</option>
+          </select>
+          <select id="cd-dropdown-performance" class="cd-select film-performance" data-order="3">
+          <option class="title" value="-1" selected>Select a Performance</option>
+          <option class="Film8895575 Day20170113" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895585">Fri Jan 13 @ 3:15pm</option>
+          <option class="Film8895575 Day20170113" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895588">Fri Jan 13 @ 6:00pm</option>
+          <option class="Film8895575 Day20170113" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895591">Fri Jan 13 @ 8:45pm</option>
+          <option class="Film8895575 Day20170114" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895594">Sat Jan 14 @ 3:15pm</option>
+          <option class="Film8895575 Day20170114" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946282">Sat Jan 14 @ 6:00pm</option>
+          <option class="Film8895575 Day20170114" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946285">Sat Jan 14 @ 8:45pm</option>
+          <option class="Film8895575 Day20170115" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946288">Sun Jan 15 @ 6:00pm</option>
+          <option class="Film8895575 Day20170115" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946291">Sun Jan 15 @ 8:45pm</option>
+          <option class="Film8895575 Day20170116" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895756.TcsSection_7482436">Mon Jan 16 @ 3:15pm</option>
+          <option class="Film8895575 Day20170116" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895615">Mon Jan 16 @ 6:00pm</option>
+          <option class="Film8895575 Day20170116" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895618">Mon Jan 16 @ 8:45pm</option>
+          <option class="Film8895575 Day20170117" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895758.TcsSection_7482436">Tue Jan 17 @ 3:15pm</option>
+          <option class="Film8895575 Day20170117" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895626">Tue Jan 17 @ 6:00pm</option>
+          <option class="Film8895575 Day20170117" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895760">Tue Jan 17 @ 8:45pm</option>
+          <option class="Film8895575 Day20170118" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895765.TcsSection_7482436">Wed Jan 18 @ 6:00pm</option>
+          <option class="Film8895575 Day20170118" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895767.TcsSection_7482436">Wed Jan 18 @ 8:45pm</option>
+          <option class="Film8895575 Day20170119" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985701">Thu Jan 19 @ 3:15pm</option>
+          <option class="Film8895575 Day20170119" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895771.TcsSection_7482436">Thu Jan 19 @ 6:00pm</option>
+          <option class="Film8895575 Day20170119" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895769.TcsSection_7482436">Thu Jan 19 @ 8:45pm</option>
+          <option class="Film8895575 Day20170120" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985704">Fri Jan 20 @ 3:15pm</option>
+          <option class="Film8895575 Day20170120" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946294">Fri Jan 20 @ 6:00pm</option>
+          <option class="Film8895575 Day20170120" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946297">Fri Jan 20 @ 8:45pm</option>
+          <option class="Film8895575 Day20170121" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985707">Sat Jan 21 @ 3:15pm</option>
+          <option class="Film8895575 Day20170121" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946300">Sat Jan 21 @ 6:00pm</option>
+          <option class="Film8895575 Day20170121" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946303">Sat Jan 21 @ 8:45pm</option>
+          <option class="Film8895575 Day20170122" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946313">Sun Jan 22 @ 6:00pm</option>
+          <option class="Film8895575 Day20170122" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946316">Sun Jan 22 @ 8:45pm</option>
+          <option class="Film8895575 Day20170123" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985710">Mon Jan 23 @ 3:15pm</option>
+          <option class="Film8895575 Day20170123" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895804">Mon Jan 23 @ 6:00pm</option>
+          <option class="Film8895575 Day20170123" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895807">Mon Jan 23 @ 8:45pm</option>
+          <option class="Film8895575 Day20170124" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985716.TcsSection_7482436">Tue Jan 24 @ 3:15pm</option>
+          <option class="Film8895575 Day20170124" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985713">Tue Jan 24 @ 3:15pm</option>
+          <option class="Film8895575 Day20170124" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895812">Tue Jan 24 @ 6:00pm</option>
+          <option class="Film8895575 Day20170124" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895817">Tue Jan 24 @ 8:45pm</option>
+          <option class="Film8895575 Day20170125" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895820.TcsSection_7482436">Wed Jan 25 @ 3:15pm</option>
+          <option class="Film8895575 Day20170125" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895822.TcsSection_7482436">Wed Jan 25 @ 6:00pm</option>
+          <option class="Film8895575 Day20170125" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895824.TcsSection_7482436">Wed Jan 25 @ 8:45pm</option>
+          <option class="Film8895575 Day20170126" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895830.TcsSection_7482436">Thu Jan 26 @ 3:15pm</option>
+          <option class="Film8895575 Day20170126" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895828.TcsSection_7482436">Thu Jan 26 @ 6:00pm</option>
+          <option class="Film8895575 Day20170126" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895826.TcsSection_7482436">Thu Jan 26 @ 8:45pm</option>
+          <option class="Film8895871 Day20170119" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895775.TcsSection_7482436">Thu Jan 19 @ 11:30am</option>
+          <option class="Film8895871 Day20170126" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895832.TcsSection_7482436">Thu Jan 26 @ 11:30am</option>
+          <option class="Film8946031 Day20170115" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946100">Sun Jan 15 @ 2:30pm</option>
+          <option class="Film8961023 Day20170101" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961027">Sun Jan 01 @ 4:45pm</option>
+          <option class="Film8961023 Day20170101" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961030">Sun Jan 01 @ 8:15pm</option>
+          <option class="Film8961023 Day20170102" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961033">Mon Jan 02 @ 4:45pm</option>
+          <option class="Film8961023 Day20170102" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961036">Mon Jan 02 @ 8:15pm</option>
+          <option class="Film8961023 Day20170103" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961039">Tue Jan 03 @ 4:45pm</option>
+          <option class="Film8961023 Day20170103" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961042">Tue Jan 03 @ 8:15pm</option>
+          <option class="Film8961023 Day20170104" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961045">Wed Jan 04 @ 4:45pm</option>
+          <option class="Film8961023 Day20170104" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961100">Wed Jan 04 @ 8:15pm</option>
+          <option class="Film8961023 Day20170105" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961097">Thu Jan 05 @ 4:45pm</option>
+          <option class="Film8961023 Day20170105" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961103">Thu Jan 05 @ 8:15pm</option>
+          <option class="Film8961023 Day20170106" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961061">Fri Jan 06 @ 4:45pm</option>
+          <option class="Film8961023 Day20170106" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961064">Fri Jan 06 @ 8:15pm</option>
+          <option class="Film8961023 Day20170107" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961109">Sat Jan 07 @ 1:30pm</option>
+          <option class="Film8961023 Day20170107" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961067">Sat Jan 07 @ 4:45pm</option>
+          <option class="Film8961023 Day20170107" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961070">Sat Jan 07 @ 8:15pm</option>
+          <option class="Film8961023 Day20170108" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961112">Sun Jan 08 @ 1:30pm</option>
+          <option class="Film8961023 Day20170108" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961073">Sun Jan 08 @ 4:45pm</option>
+          <option class="Film8961023 Day20170108" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961076">Sun Jan 08 @ 8:15pm</option>
+          <option class="Film8961023 Day20170109" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961079">Mon Jan 09 @ 4:45pm</option>
+          <option class="Film8961023 Day20170109" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961082">Mon Jan 09 @ 8:15pm</option>
+          <option class="Film8961023 Day20170110" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961085">Tue Jan 10 @ 4:45pm</option>
+          <option class="Film8961023 Day20170110" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961088">Tue Jan 10 @ 8:15pm</option>
+          <option class="Film8961023 Day20170111" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968560">Wed Jan 11 @ 4:45pm</option>
+          <option class="Film8961023 Day20170111" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968563">Wed Jan 11 @ 8:15pm</option>
+          <option class="Film8961023 Day20170112" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961091">Thu Jan 12 @ 4:45pm</option>
+          <option class="Film8961023 Day20170112" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961094">Thu Jan 12 @ 8:15pm</option>
+          <option class="Film8961026 Day20170105" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961106">Thu Jan 05 @ 11:30am</option>
+          <option class="Film8961026 Day20170112" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961115">Thu Jan 12 @ 11:30am</option>
+          <option class="Film8985683 Day20170118" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985718">Wed Jan 18 @ 2:30pm</option>
+          <option class="Film8968148 Day20170101" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968167">Sun Jan 01 @ 2:00pm</option>
+          <option class="Film8968148 Day20170102" value="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968170">Mon Jan 02 @ 2:00pm</option>
+          </select>
+            </div>
+          </div>
+<div class="newsletter">
+<h2 class="subtitle first">Subscribe to our Newsletter</h2>
+<p>To receive a weekly e-mail newsletter with details of upcoming events, film times and other Rio Cinema news, submit your e-mail address below.</p>
+<form class="newsletter" method="post" action="Booking?Booking=TSelectItems.waENewsSignupUpdate.TcsWebMenuItem_8181589.TcsWebTab_8181590">
+<input type="text" name="Forename" id="Forename" placeholder="Forename"/>
+<input type="text" name="Surname" id="Surname" placeholder="Surname"/>
+<input name="EmailAddress" placeholder="EmailAddress" id="EmailAddress" type="email"/>
+<input class="important-info-input" type="text" name="ImportantInfo" value="" autocomplete="off"/>
+<input type="submit" value="Subscribe" class="button subscribe"/>
+</form>
+</div>
+        </div>
+      </div>
+      <div id="AdvancedCinemaTemplateRow2" class="clearfix">
+      </div>
+      <div id="AdvancedCinemaTemplateRow1" class="row">
+        <div id="content" class="eightcol main-content">
+          <div class="grid small">
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8985740.jpg" alt="Classic Matinee"/>
+              <figcaption>
+              <h2>Classic Matinee <span></span></h2>
+              <div>
+                
+                <a href="WhatsOn?FilmType=7403162">View All</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8968146.jpg" alt="Holiday Matinees"/>
+              <figcaption>
+              <h2>Holiday Matinees <span></span></h2>
+              <div>
+                
+                <a href="WhatsOn?FilmType=7328609">View All</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8946029.jpg" alt="NT Live"/>
+              <figcaption>
+              <h2>NT Live <span></span></h2>
+              <div>
+                
+                <a href="WhatsOn?FilmType=7328606">View All</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8961021.jpg" alt="New Releases"/>
+              <figcaption>
+              <h2>New Releases <span></span></h2>
+              <div>
+                
+                <a href="WhatsOn?FilmType=542">View All</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/8961024.jpg" alt="Parents and Babies Club"/>
+              <figcaption>
+              <h2>Parents and Babies Club <span></span></h2>
+              <div>
+                
+                <a href="WhatsOn?FilmType=7328612">View All</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="grid small">
+          </div>
+        </div>
+        <div id="sidebar" class="sidebar fourcol last">
+          <div id="side-carousel" class="grid single-column">
+          <div class="item">
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/7328338.jpg" alt="Become a Member"/>
+              <figcaption>
+              <h2>Become a Member <span></span></h2>
+              <div>
+                <a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4">Support the Rio &amp; Save Money</a><br/><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4">Great Discounts</a><br/>
+                <a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4" class="button">Join Today</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          </div>
+          <div class="item">
+          <div class="item">
+            <figure class="effect-julia twelvecol ">
+              <img class="show-image" src="https://images.savoysystems.co.uk/RIL/7328346.jpg" alt="Gift Vouchers"/>
+              <figcaption>
+              <h2>Gift Vouchers <span></span></h2>
+              <div>
+                <a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4&amp;SubListID=0&amp;SubPageID=0">Give as a present or reward</a><br/><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4&amp;SubListID=0&amp;SubPageID=0">Buy Tickets or spend in the Cafe</a><br/>
+                <a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4&amp;SubListID=0&amp;SubPageID=0" class="button">Buy Now</a>
+              </div>
+              </figcaption>
+            </figure>
+          </div>
+          </div>
+          </div>
+          <h2 class="subtitle first">What's On This Week</h2>
+          <div class="grid small">
+          <div class="twelvecol" id="this-week">
+          <h2>Today</h2>
+          <ul id="sidebar-list" class="eventsCalendar-list">
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8968148">
+          TROLLS
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968167"><small>14:00</small></a>
+          </time>
+          </li>
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8961023">
+          SILENCE
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961027"><small>16:45</small></a><a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961030"><small>20:15</small></a>
+          </time>
+          </li>
+          </ul>
+          </div>
+          <div class="clearfix"></div>
+          <div class="twelvecol" id="this-week">
+          <h2>Tomorrow</h2>
+          <ul id="sidebar-list" class="eventsCalendar-list">
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8968148">
+          TROLLS
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968170"><small>14:00</small></a>
+          </time>
+          </li>
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8961023">
+          SILENCE
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961033"><small>16:45</small></a><a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961036"><small>20:15</small></a>
+          </time>
+          </li>
+          </ul>
+          </div>
+          <div class="clearfix"></div>
+          <div class="twelvecol" id="this-week">
+          <h2>Tue</h2>
+          <ul id="sidebar-list" class="eventsCalendar-list">
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8961023">
+          SILENCE
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961039"><small>16:45</small></a><a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961042"><small>20:15</small></a>
+          </time>
+          </li>
+          </ul>
+          </div>
+          <div class="clearfix"></div>
+          <div class="twelvecol" id="this-week">
+          <h2>Wed</h2>
+          <ul id="sidebar-list" class="eventsCalendar-list">
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8961023">
+          SILENCE
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961045"><small>16:45</small></a><a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961100"><small>20:15</small></a>
+          </time>
+          </li>
+          </ul>
+          </div>
+          <div class="clearfix"></div>
+          <div class="twelvecol" id="this-week">
+          <h2>Thu</h2>
+          <ul id="sidebar-list" class="eventsCalendar-list">
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8961026">
+          SILENCE P&amp;B
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961106"><small>11:30 (P&amp;B)</small></a>
+          </time>
+          </li>
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8961023">
+          SILENCE
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961097"><small>16:45</small></a><a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961103"><small>20:15</small></a>
+          </time>
+          </li>
+          </ul>
+          </div>
+          <div class="clearfix"></div>
+          <div class="twelvecol" id="this-week">
+          <h2>Fri</h2>
+          <ul id="sidebar-list" class="eventsCalendar-list">
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8961023">
+          SILENCE
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961061"><small>16:45</small></a><a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961064"><small>20:15</small></a>
+          </time>
+          </li>
+          </ul>
+          </div>
+          <div class="clearfix"></div>
+          <div class="twelvecol" id="this-week">
+          <h2>Sat</h2>
+          <ul id="sidebar-list" class="eventsCalendar-list">
+          <li>
+          <a class="eventTitle" href="WhatsOn?Film=8961023">
+          SILENCE
+          </a>
+          <time datetime="">
+          <a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961109"><small>13:30</small></a><a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961067"><small>16:45</small></a><a href="Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961070"><small>20:15</small></a>
+          </time>
+          </li>
+          </ul>
+          </div>
+          <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="clearfix"></div>
+          <div id="eventCalendarOnlyOneDescription"></div>
+          <script type="text/javascript">
+var eventsInline = [
+{
+"date": "2017-01-01 14:00:00", 
+"type": "Holiday Matinees", 
+"title": "TROLLS (U)", 
+"description": "Another joyously animated tale from the ever-inventive creators of Shrek. Welcome to the world of the Trolls, a happy band of folk who are very likely to break into song and dance at the drop of a hat...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8968146.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968167", 
+"url": "WhatsOn?Film=8968148"
+}
+, 
+{
+"date": "2017-01-02 14:00:00", 
+"type": "Holiday Matinees", 
+"title": "TROLLS (U)", 
+"description": "Another joyously animated tale from the ever-inventive creators of Shrek. Welcome to the world of the Trolls, a happy band of folk who are very likely to break into song and dance at the drop of a hat...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8968146.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968170", 
+"url": "WhatsOn?Film=8968148"
+}
+, 
+{
+"date": "2017-01-01 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961027", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-01 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961030", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-02 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961033", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-02 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961036", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-03 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961039", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-03 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961042", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-04 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961045", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-04 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961100", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-05 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961097", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-05 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961103", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-06 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961061", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-06 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961064", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-07 13:30:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961109", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-07 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961067", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-07 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961070", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-08 13:30:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961112", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-08 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961073", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-08 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961076", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-09 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961079", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-09 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961082", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-10 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961088", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-11 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968560", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-11 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8968563", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-12 16:45:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961091", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-12 20:15:00", 
+"type": "New Releases", 
+"title": "SILENCE (15)", 
+"description": "A spiritual awakening for the beginning of 2017 as Martin Scorsese 's long gestating passion project - 26 years in the making - is finally realised. Based on Shusaku Endo's classic novel for our times...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8961021.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8961094", 
+"url": "WhatsOn?Film=8961023"
+}
+, 
+{
+"date": "2017-01-13 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895585", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-13 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895588", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-13 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895591", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-14 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895594", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-14 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946282", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-14 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946285", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-15 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946288", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-15 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946291", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-16 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895756.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-16 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895615", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-16 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895618", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-17 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895758.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-17 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895626", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-17 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895760", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-18 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895765.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-18 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895767.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-19 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985701", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-19 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895771.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-19 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895769.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-20 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985704", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-20 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946294", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-20 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946297", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-21 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985707", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-21 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946300", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-21 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946303", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-22 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946313", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-22 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946316", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-23 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985710", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-23 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895804", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-23 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895807", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-24 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895812", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-24 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895817", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-25 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895820.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-25 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895822.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-25 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895824.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-26 15:15:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895830.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-26 18:00:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895828.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-26 20:45:00", 
+"type": "New Releases", 
+"title": "LA LA LAND  (12A)", 
+"description": "Somewhere over the rainbow... Los Angeles now is the setting for an exhilarating homage to optimism, dreams, falling in love and the Golden Age of the Hollywood Musical. Damien Chazelle, director of W...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8895570.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8895826.TcsSection_7482436", 
+"url": "WhatsOn?Film=8895575"
+}
+, 
+{
+"date": "2017-01-15 14:30:00", 
+"type": "NT Live", 
+"title": "NT Live: NO MAN'S LAND (15)", 
+"description": "Following their hit run on Broadway, Ian McKellen and Patrick Stewart return to the West End stage in a glorious revival of Harold Pinter’s comic classic NO MAN'S LAND, recorded live at Wyndham's thea...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8946029.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8946100", 
+"url": "WhatsOn?Film=8946031"
+}
+, 
+{
+"date": "2017-01-18 14:30:00", 
+"type": "Classic Matinee", 
+"title": "Southside With You (12A)", 
+"description": "Inspired by Barack and Michelle Obama’s first date, SOUTHSIDE WITH YOU recounts the eventful summer day in 1989 when a young law firm associate named Barack Obama (Parker Sawyers) tried to woo lawyer ...", 
+"imageURL": "https://images.savoysystems.co.uk/RIL/8985740.jpg", 
+"bookingurl": "Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_0.TcsWebTab_0.TcsPerformance_8985718", 
+"url": "WhatsOn?Film=8985683"
+}
+, 
+];
+            //Event Calendar
+            $("#eventCalendarOnlyOneDescription").eventCalendar({
+              jsonData: eventsInline,
+              onlyOneDescription: false,
+              jsonDateFormat: 'human',
+              openEventInNewWindow: false,
+              moveSpeed: 200,
+              eventsLimit: 3,
+              eventsScrollable: false
+            });
+            //Category Picker
+            $(function(){
+              $(".filter-item").hide();
+              $(".filter-item.Today").show();
+              $("#CategoryPicker li").click(function(){
+                $(".filter-item").fadeIn(300);
+                $("#CategoryPicker a").removeClass("current");
+                $(this).addClass("current");
+                return false;
+              });
+              $("a.filter").click(function(){
+                if (!$(this).hasClass("current")){
+                  var thisFilter = $(this).attr("id");
+                  $(".filter-item").hide(0);
+                  $("."+ thisFilter).fadeIn(300);
+                  $("#CategoryPicker a").removeClass("current");
+                  $(this).addClass("current");
+                }
+                return false;
+              });
+            });
+          </script>
+        </div>
+      </div>
+      <div id="clear" class="clearfix">
+      </div>
+    </main>
+    <footer id="footer" class="row">
+      <div id="A" class="threecol">
+        <nav class="footer_nav">
+          <h2 class="subtitle">Rio Cinema</h2>
+          <ul class="nospace">
+            <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=2&amp;SubListID=0&amp;SubPageID=0">Getting Here</a></li>
+            <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=2&amp;SubListID=0&amp;SubPageID=2">Ticket Prices</a></li>
+            <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=2&amp;SubListID=0&amp;SubPageID=3">Access Information</a></li>
+            <li><a href="http://riocinema.org.uk/RioCinema.dll/Booking?Booking=TSelectItems.waSelectItemsPrompt.TcsWebMenuItem_1015474.TcsWebTab_1015475">Terms &amp; Conditions</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="B" class="threecol">
+        <h2 class="subtitle">Latest Gallery</h2>
+        <ul id="ft_gallery" class="nospace spacing clear">
+          <li class="fourcol "><a href="https://images.savoysystems.co.uk/RIL/7328336.jpg" data-lightbox="image-gallery-1" title="The Rio's Art Deco Auditorium" class="read-more"><img src="https://images.savoysystems.co.uk/RIL/7328336.jpg" alt="The Rio's Art Deco Auditorium"></a></li>
+          <li class="fourcol "><a href="https://images.savoysystems.co.uk/RIL/7328338.jpg" data-lightbox="image-gallery-1" title="The Rio's Art Deco auditorium from the circle" class="read-more"><img src="https://images.savoysystems.co.uk/RIL/7328338.jpg" alt="The Rio's Art Deco auditorium from the circle"></a></li>
+          <li class="fourcol last"><a href="https://images.savoysystems.co.uk/RIL/7328340.jpg" data-lightbox="image-gallery-1" title="The RIo Projection Room" class="read-more"><img src="https://images.savoysystems.co.uk/RIL/7328340.jpg" alt="The RIo Projection Room"></a></li>
+          <li class="fourcol "><a href="https://images.savoysystems.co.uk/RIL/7328342.jpg" data-lightbox="image-gallery-1" title="We screen from state-of-the-art digital and traditional 35 and 16mm" class="read-more"><img src="https://images.savoysystems.co.uk/RIL/7328342.jpg" alt="We screen from state-of-the-art digital and traditional 35 and 16mm"></a></li>
+          <li class="fourcol "><a href="https://images.savoysystems.co.uk/RIL/7328344.jpg" data-lightbox="image-gallery-1" title="The Rio Cafe Bar serves a great range of beer, wine, soft drinks, snacks and fresh popcorn" class="read-more"><img src="https://images.savoysystems.co.uk/RIL/7328344.jpg" alt="The Rio Cafe Bar serves a great range of beer, wine, soft drinks, snacks and fresh popcorn"></a></li>
+          <li class="fourcol last"><a href="https://images.savoysystems.co.uk/RIL/7328346.jpg" data-lightbox="image-gallery-1" title="The Rio as The Classic Cinema in 1950" class="read-more"><img src="https://images.savoysystems.co.uk/RIL/7328346.jpg" alt="The Rio as The Classic Cinema in 1950"></a></li>
+          <li class="fourcol "><a href="https://images.savoysystems.co.uk/RIL/7328348.jpg" data-lightbox="image-gallery-1" title="The Rio Auditorium in 1950" class="read-more"><img src="https://images.savoysystems.co.uk/RIL/7328348.jpg" alt="The Rio Auditorium in 1950"></a></li>
+          <li class="fourcol "><a href="https://images.savoysystems.co.uk/RIL/7328350.jpg" data-lightbox="image-gallery-1" title="The Rio" class="read-more"><img src="https://images.savoysystems.co.uk/RIL/7328350.jpg" alt="The Rio"></a></li>
+          <li class="fourcol last"><a href="https://images.savoysystems.co.uk/RIL/7328352.jpg" data-lightbox="image-gallery-1" title="The Rio" class="read-more"><img src="https://images.savoysystems.co.uk/RIL/7328352.jpg" alt="The Rio"></a></li>
+        </ul>
+      </div>
+      <div id="C" class="threecol">
+        <h2 class="subtitle">From Twitter</h2>
+        <div class="tweet-container">
+<div id="TweetContent" class="item-content-tweets">
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/riocinema" data-widget-id="23124919" data-tweet-limit="2" data-chrome="noheader nofooter noborders noscrollbar transparent">Tweets</a>
+<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+        </div>
+      </div>
+      <div id="D" class="threecol last">
+<div class="newsletter">
+<h2 class="subtitle first">Subscribe to our Newsletter</h2>
+<p>To receive a weekly e-mail newsletter with details of upcoming events, film times and other Rio Cinema news, submit your e-mail address below.</p>
+<form class="newsletter" method="post" action="Booking?Booking=TSelectItems.waENewsSignupUpdate.TcsWebMenuItem_8181589.TcsWebTab_8181590">
+<input type="text" name="Forename" id="Forename" placeholder="Forename"/>
+<input type="text" name="Surname" id="Surname" placeholder="Surname"/>
+<input name="EmailAddress" placeholder="EmailAddress" id="EmailAddress" type="email"/>
+<input class="important-info-input" type="text" name="ImportantInfo" value="" autocomplete="off"/>
+<input type="submit" value="Subscribe" class="button subscribe"/>
+</form>
+</div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="twelvecol copyright">
+        <div class="sixcol">
+          <p>&copy; 2017  - All Rights Reserved - Rio Cinema</p>
+        </div>
+        <div class="sixcol last savoy">
+          <p>Website by <a href="http://savoysystems.co.uk">Savoy Systems</a></p>
+        </div>
+      </div>
+    </footer>
+    <div id="overlay" class="phoenix-overlay">
+    </div>
+    <nav id="nav" class="phoenix-nav">
+      <ul id="phoenix-primary-nav" class="phoenix-primary-nav is-fixed">
+      <li class="has-children">
+        <a href="#" >What's On</a>
+         <ul class="phoenix-secondary-nav is-hidden row">
+          <li class="go-back"><a href="#0">Menu</a></li>
+          <li class="see-all"><a href="WhatsOn" >View All</a></li>
+          <li class="has-children">
+            <a href="#">Film</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Film</a></li>
+      <li><a href="WhatsOn">View All</a></li>
+          <li><a href="WhatsOn?FilmType=ComingSoon">Coming Soon</a></li>
+            </ul>
+          </li>
+        </ul>
+</li>
+      <li class="has-children">
+        <a href="#" >Community Screenings</a>
+         <ul class="phoenix-secondary-nav is-hidden row">
+          <li class="go-back"><a href="#0">Menu</a></li>
+          <li class="see-all"><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=8">Go to Community Screenings page</a></li>
+          <li class="has-children">
+            <a href="#">Classic Matinees</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Classic Matinees</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=8&SubListID=0&SubPageID=0">Classic Matinees</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a href="#">Parent &amp; Baby Club</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Parent &amp; Baby Club</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=8&SubListID=1&SubPageID=0">Parent &amp; Baby Club</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a href="#">Education</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Education</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=8&SubListID=2&SubPageID=0">Education</a></li>
+            </ul>
+          </li>
+        </ul>
+</li>
+      <li class="has-children">
+        <a href="#" >About Us</a>
+         <ul class="phoenix-secondary-nav is-hidden row">
+          <li class="go-back"><a href="#0">Menu</a></li>
+          <li class="see-all"><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=1">Go to About Us page</a></li>
+          <li class="has-children">
+            <a href="#">About Us</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">About Us</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=1&SubListID=0&SubPageID=0">Our History</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=1&SubListID=0&SubPageID=2">Job Opportunities</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=1&SubListID=0&SubPageID=5">FAQs</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a href="#">Support Us</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Support Us</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=1&SubListID=1&SubPageID=1">Support Us</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=1&SubListID=1&SubPageID=0">Make a Donation</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=1&SubListID=1&SubPageID=2">Name a Seat</a></li>
+            </ul>
+          </li>
+        </ul>
+</li>
+      <li class="has-children">
+        <a href="#" >Your Visit</a>
+         <ul class="phoenix-secondary-nav is-hidden row">
+          <li class="go-back"><a href="#0">Menu</a></li>
+          <li class="see-all"><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=2">Go to Your Visit page</a></li>
+          <li class="has-children">
+            <a href="#">Your Visit</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Your Visit</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=2&SubListID=0&SubPageID=0">Getting Here</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=2&SubListID=0&SubPageID=4">Cafe Bar</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=2&SubListID=0&SubPageID=2">Ticket Prices</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=2&SubListID=0&SubPageID=3">Access Information</a></li>
+            </ul>
+          </li>
+        </ul>
+</li>
+      <li class="has-children">
+        <a href="#" >HIRE US</a>
+         <ul class="phoenix-secondary-nav is-hidden row">
+          <li class="go-back"><a href="#0">Menu</a></li>
+          <li class="see-all"><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=7">Go to HIRE US page</a></li>
+          <li class="has-children">
+            <a href="#">Hire Us</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Hire Us</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=7&SubListID=0&SubPageID=1">Private Hires</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=7&SubListID=0&SubPageID=0">Filming at The Rio</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=7&SubListID=0&SubPageID=2">Kids Birthday Parties</a></li>
+            </ul>
+          </li>
+        </ul>
+</li>
+      <li class="has-children">
+        <a href="#" >Membership</a>
+         <ul class="phoenix-secondary-nav is-hidden row">
+          <li class="go-back"><a href="#0">Menu</a></li>
+          <li class="see-all"><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4">Go to Membership page</a></li>
+          <li class="has-children">
+            <a href="#">Membership</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Membership</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4&SubListID=0&SubPageID=5">Benefits</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4&SubListID=0&SubPageID=0">Gift Vouchers</a></li>
+      <li><a href="http://riocinema.org.uk/RioCinema.dll/Page?PageID=4&SubListID=0&SubPageID=1">Annual Report</a></li>
+            </ul>
+          </li>
+        </ul>
+</li>
+      <li class="has-children">
+      <a href="#">Contact</a>
+      <ul class="phoenix-secondary-nav is-hidden row">
+      <li class="go-back"><a href="#0">Menu</a></li>
+      <li class="see-all"><a href="Contact">Go to Contact</a></li>
+      <li class="has-children">
+      <a href="Contact">Contact</a>
+      <ul class="is-hidden">
+      <li class="go-back"><a href="#0">Contact</a></li>
+      <li class="see-all"><a href="Contact">Contact</a></li>
+      <li><a href="Contact">Get In Touch</a></li>
+      <li><a href="Contact">Rio Cinema Staff</a></li>
+      <li><a href="News">Rio Cinema News</a></li>
+      <li><a href="Blog">Rio Cinema Blog</a></li>
+      </ul>
+      </li>
+      <br/>
+      <br/>
+      </ul>
+      </li>
+      </ul>
+      <div id="phoenix-search" class="phoenix-search">
+      <form>
+      <input type="search" id="FilmSearch" class="" placeholder="Search for films...">
+      </form>
+      <ul id="FilmList">
+        <li>
+          <a href="WhatsOn?Film=8895575">
+            LA LA LAND
+          </a>
+        </li>
+        <li>
+          <a href="WhatsOn?Film=8895871">
+            LA LA LAND P&B
+          </a>
+        </li>
+        <li>
+          <a href="WhatsOn?Film=8946031">
+            NT Live: NO MAN'S LAND
+          </a>
+        </li>
+        <li>
+          <a href="WhatsOn?Film=8961023">
+            SILENCE
+          </a>
+        </li>
+        <li>
+          <a href="WhatsOn?Film=8961026">
+            SILENCE P&B
+          </a>
+        </li>
+        <li>
+          <a href="WhatsOn?Film=8985683">
+            Southside With You
+          </a>
+        </li>
+        <li>
+          <a href="WhatsOn?Film=8968148">
+            TROLLS
+          </a>
+        </li>
+      </ul>
+      </div>
+    </nav>
+    <section>
+    <p style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><script>   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');     ga('create', 'UA-85670697-1', 'auto');   ga('send', 'pageview');   </script></p>
+
+    </section>
+  </body>
+</html>

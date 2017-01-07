@@ -26,10 +26,13 @@ function extractListings(listing, pageContent) {
   let data = extractRawData($);
   setDayIndicesOnShowings(data);
   setTitlesOnShowings(data);
-  let listings = extractListingsFromTree(data);
-  setDatesOnListings(listings);
-  trimTitlesOnListings(listings);
-  titleCaseTitlesOnListings(listings);
+  let showings = extractShowingsFromTree(data);
+  setDatesOnShowings(showings);
+  trimTitlesOnShowings(showings);
+  titleCaseTitlesOnShowings(showings);
+  return showings.map(function(showing) {
+    return listing(showing.dateTime, showing.title, "Rio Cinema");
+  });
 };
 
 function setDayIndicesOnShowings(data) {
@@ -52,37 +55,44 @@ function setTitlesOnShowings(data) {
   });
 };
 
-function setDatesOnListings(listings) {
-  listings.forEach(function(listing) {
-    listing.date = date(listing.dayIndex);
+function setDatesOnShowings(showings) {
+  showings.forEach(function(showing) {
+    let hoursMinutes = showing.time.match(/(\d{2})\:(\d{2})/);
+    showing.dateTime = date(showing.dayIndex,
+                            hoursMinutes[1],
+                            hoursMinutes[2]);
   });
 };
 
-function trimTitlesOnListings(listings) {
-  listings.forEach(function(listing) {
+function trimTitlesOnShowings(showings) {
+  showings.forEach(function(listing) {
     listing.title = listing.title.trim();
   });
 };
 
-function titleCaseTitlesOnListings(listings) {
-  listings.forEach(function(listing) {
+function titleCaseTitlesOnShowings(showings) {
+  showings.forEach(function(listing) {
     listing.title = titleCase(listing.title);
   });
 };
 
-function extractListingsFromTree(data) {
-  return data.reduce(function(listings, day) {
+function extractShowingsFromTree(data) {
+  return data.reduce(function(showings, day) {
     day.films.forEach(function(film) {
-      listings = listings.concat(film.showings)
+      showings = showings.concat(film.showings)
     });
 
-    return listings;
+    return showings;
   }, []);
 };
 
 
-function date(index) {
-  return moment().startOf("day").add(index, "days");
+function date(index, hours, minutes) {
+  return moment()
+    .startOf("day")
+    .add(index, "days")
+    .hours(hours)
+    .minutes(minutes);
 };
 
 function extractRawData($) {
