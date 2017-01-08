@@ -1,6 +1,11 @@
 var express = require("express");
 var routeHandlers = require("./route-handlers");
 
+function addMiddleware(app) {
+  app.use(express.static('public'));
+  return app;
+};
+
 function createApp() {
   return express();
 };
@@ -20,4 +25,4 @@ function startApp(app) {
     });
 };
 
-startApp(addRoutes(createApp()));
+startApp(addMiddleware(addRoutes(createApp())));
