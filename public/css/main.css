@@ -1,0 +1,13 @@
+.day {
+  background-color: #ff8;
+}
+
+.night {
+  background-color: #ccf;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.1em;
+}
