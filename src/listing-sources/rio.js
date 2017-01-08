@@ -2,7 +2,6 @@
 
 let moment = require("moment");
 let _ = require("underscore");
-let titleCase = require("title-case");
 
 let artoo = require('artoo-js');
 let cheerio = require('cheerio');
@@ -29,7 +28,6 @@ function extractListings(listing, pageContent) {
   let showings = extractShowingsFromTree(data);
   setDatesOnShowings(showings);
   trimTitlesOnShowings(showings);
-  titleCaseTitlesOnShowings(showings);
   return showings.map(function(showing) {
     return listing(showing.dateTime, showing.title, "Rio Cinema");
   });
@@ -67,12 +65,6 @@ function setDatesOnShowings(showings) {
 function trimTitlesOnShowings(showings) {
   showings.forEach(function(listing) {
     listing.title = listing.title.trim();
-  });
-};
-
-function titleCaseTitlesOnShowings(showings) {
-  showings.forEach(function(listing) {
-    listing.title = titleCase(listing.title);
   });
 };
 
