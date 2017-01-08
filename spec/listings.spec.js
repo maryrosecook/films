@@ -21,25 +21,6 @@ describe("listings", function() {
     });
   });
 
-  describe("#sort", function() {
-    it("sorts the listings", function() {
-      let listingObjects = [{
-        dateTime: moment(),
-        film: "Margaret",
-        cinema: "Rich Mix"
-      }, {
-        dateTime: moment().subtract(1, "minute"),
-        film: "Heat",
-        cinema: "Rich Mix"
-      }];
-
-      let sortedListings = listings.sort(listingObjects.slice());
-
-      expect(sortedListings[0].film).toEqual(listingObjects[1].film);
-      expect(sortedListings[1].film).toEqual(listingObjects[0].film);
-    });
-  });
-
   describe("#groupByFilm", function() {
     it("groups listings by film", function() {
       let listingObjects = [{
