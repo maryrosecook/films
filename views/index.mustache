@@ -2,16 +2,22 @@
 <html>
   <head>
     <title>Films</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
-    {{#films}}
-      <h2>{{film}}</h2>
-      {{#listings}}
-        <div class="listing">
-          <span class="dateTime">{{dateTime}}</span>
-          <span class="cinema">{{cinema}}</span>
+    {{#dates}}
+      <h2>{{date}}</h2>
+      {{#films}}
+        <div>
+          <h3>{{film}}</h3>
+          <div>
+            {{#listings}}
+              <span class="{{partOfDay}}">{{time}}</span>
+            {{/listings}}
+          </div>
         </div>
-      {{/listings}}
-    {{/films}}
+        <br/>
+      {{/films}}
+    {{/dates}}
   </body>
 </html>
