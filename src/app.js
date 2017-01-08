@@ -3,8 +3,8 @@ var routeHandlers = require("./route-handlers");
 var path = require("path");
 
 function addMiddleware(app) {
-  app.use(express.static(path.join(__dirname, '../public')));
-  return app;
+  return app.use(express.static(
+    path.join(__dirname, '../public')));
 };
 
 function createApp() {
