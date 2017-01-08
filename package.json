@@ -26,6 +26,7 @@
     "proxyquire": "^1.7.10",
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
+    "title-case": "^2.1.0",
     "underscore": "^1.8.3"
   }
 }
