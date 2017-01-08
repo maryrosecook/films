@@ -17,6 +17,7 @@
     "sinon-as-promised": "^4.0.2"
   },
   "dependencies": {
+    "artoo-js": "^0.3.2",
     "cheerio": "^0.22.0",
     "express": "^4.14.0",
     "fs-extra": "^1.0.0",
