@@ -24,7 +24,7 @@ describe("scraping hackney picturehouse", function() {
     requestPromise.then(function(listings) {
       expect(listings[0])
         .toEqual(listing("2016-12-27T21:10:00Z",
-                         "Paterson [15]",
+                         "Paterson",
                          "Hackney Picturehouse"));
       done();
     });
@@ -34,7 +34,7 @@ describe("scraping hackney picturehouse", function() {
     requestPromise.then(function(listings) {
       expect(_.last(listings))
         .toEqual(listing("2017-08-09T19:00:00Z",
-                         "RSC Live: Titus Andronicus [12A]",
+                         "RSC Live: Titus Andronicus",
                          "Hackney Picturehouse"));
       done();
     });

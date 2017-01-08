@@ -26,13 +26,17 @@ function extractListings(listing, pageContent) {
   return allDateTimes($)
     .map(function(timeNode) {
       return listing(dateTime($, timeNode),
-                     filmTitle($, timeNode),
+                     removeCertificate(filmTitle($, timeNode)),
                      "Hackney Picturehouse");
     });
 };
 
 function allDateTimes($) {
   return $(".btn-xs").toArray();
+};
+
+function removeCertificate(title) {
+  return title.split("[")[0].trim();
 };
 
 function filmTitle($, timeNode) {
