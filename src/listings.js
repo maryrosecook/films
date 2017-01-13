@@ -48,13 +48,5 @@ function alphabeticalSortOrder(a, b) {
   }
 };
 
-function groupByFilm(listings) {
-  return _.chain(listings)
-    .groupBy(_.property("film"))
-    .map(argumentsObject(["listings", "film"]))
-    .value();
-};
-
-listings.groupByFilm = groupByFilm;
 listings.groupByDateAndFilm = groupByDateAndFilm;
 module.exports = listings;

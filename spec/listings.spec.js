@@ -20,30 +20,4 @@ describe("listings", function() {
                                            jsonObjects[0].cinema);
     });
   });
-
-  describe("#groupByFilm", function() {
-    it("groups listings by film", function() {
-      let listingObjects = [{
-        dateTime: moment(),
-        film: "Margaret",
-        cinema: "Rich Mix"
-      }, {
-        dateTime: moment(),
-        film: "Heat",
-        cinema: "Rich Mix"
-      }, {
-        dateTime: moment(),
-        film: "Margaret",
-        cinema: "ICA"
-      }];
-
-      let groupedListings = listings.groupByFilm(listingObjects);
-
-      expect(groupedListings[0].film).toEqual("Margaret");
-      expect(groupedListings[0].listings[0].cinema)
-        .toEqual("Rich Mix");
-      expect(groupedListings[0].listings[1].cinema)
-        .toEqual("ICA");
-    });
-  });
 });
