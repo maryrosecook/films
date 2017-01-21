@@ -3,17 +3,17 @@
 let _ = require("underscore");
 
 function listings(listing, jsonObjects) {
-  return jsonObjects.map(function(obj) {
+  return jsonObjects.map((obj) => {
     return listing(obj.dateTime, obj.film, obj.cinema);
   });
 };
 
 function groupByDateAndFilm(listings) {
   return _.chain(listings)
-    .groupBy(function(listing) {
+    .groupBy((listing) => {
       return listing.dateTime.format("YYYY-MM-DD");
     })
-    .map(function(dateListings, date) {
+    .map((dateListings, date) => {
       return { date, films: prepareFilms(dateListings) };
     })
     .value();
@@ -27,12 +27,12 @@ function argumentsObject(names) {
 
 function prepareFilms(listings) {
   return _.chain(listings)
-    .sort(function(listing1, listing2) {
+    .sort((listing1, listing2) => {
       return listing1.dateTime.diff(listing2.dateTime);
     })
     .groupBy(_.property("film"))
     .map(argumentsObject(["listings", "film"]))
-    .sort(function(a, b) {
+    .sort((a, b) => {
       return alphabeticalSortOrder(a.film, b.film);
     })
     .value();
