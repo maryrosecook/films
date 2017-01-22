@@ -21,7 +21,7 @@ function startApp(app) {
   var port = process.env.FILM_PORT || 4000;
   return app
     .set("port", port)
-    .listen(port, function() {
+    .listen(port, () => {
       console.log("App is running on port", port);
     });
 };
