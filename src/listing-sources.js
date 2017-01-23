@@ -13,7 +13,7 @@ const LISTING_SOURCE_FILENAMES = [
 
 function listingSources() {
   return LISTING_SOURCE_FILENAMES
-    .map(function(listingSourceFilename) {
+    .map((listingSourceFilename) => {
       return require(path.join(LISTING_SOURCES_PATH,
                                listingSourceFilename));
     });
