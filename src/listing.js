@@ -7,10 +7,6 @@ const DAY_START_HOURS = 8;
 const NIGHT_START_HOURS = 18;
 
 let listingFns = {
-  date: function() {
-    return this.dateTime.format("YYYY-MM-DD");
-  },
-
   time: function() {
     return this.dateTime.format("HH:mm");
   },
