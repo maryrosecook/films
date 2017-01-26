@@ -10,11 +10,13 @@ let db = require("../src/db");
 
 const DATA_DIR = path.join(__dirname, "../data");
 
-scrapeListings(listingSources(), requestPromise)
-  .then(function(listings) {
-    report(listings);
-    save(DATA_DIR, listings);
-  });
+function scrape() {
+  return scrapeListings(listingSources(), requestPromise)
+    .then(function(listings) {
+      report(listings);
+      save(DATA_DIR, listings);
+    });
+};
 
 function report(listings) {
   console.log(`Saving ${listings.length} listings`);
@@ -23,3 +25,9 @@ function report(listings) {
 function save(dataDir, listings) {
   db.write(dataDir, listings);
 };
+
+if (require.main === module) {
+  scrape();
+}
+
+module.exports = scrape;
