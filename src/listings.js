@@ -11,7 +11,7 @@ function fromJson(listing, jsonObjects) {
 function groupByDateAndFilm(listings) {
   return _.chain(listings)
     .groupBy((listing) => {
-      return listing.dateTime.format("dddd Do MMMM");
+      return listing.dateTime.format("YYYY-MM-DD");
     })
     .map((dateListings, date) => {
       return { date, films: prepareFilms(dateListings) };
