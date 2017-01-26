@@ -1,7 +1,7 @@
 "use strict";
 
 let cheerio = require("cheerio");
-let moment = require("moment");
+let moment = require("moment-timezone");
 
 let listing = require("../listing");
 

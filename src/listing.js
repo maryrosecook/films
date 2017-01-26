@@ -1,6 +1,6 @@
 "use strict";
 
-let moment = require("moment");
+let moment = require("moment-timezone");
 let titleCase = require("title-case");
 
 const DAY_START_HOURS = 8;

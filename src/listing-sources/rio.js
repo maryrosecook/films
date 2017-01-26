@@ -1,6 +1,6 @@
 "use strict";
 
-let moment = require("moment");
+let moment = require("moment-timezone");
 let _ = require("underscore");
 
 let artoo = require('artoo-js');
