@@ -1,6 +1,7 @@
 "use strict";
 
 let _ = require("underscore");
+let moment = require("moment-timezone");
 
 function fromJson(listing, jsonObjects) {
   return jsonObjects.map((obj) => {
@@ -15,6 +16,9 @@ function groupByDateAndFilm(listings) {
     })
     .map((dateListings, date) => {
       return { date, films: prepareFilms(dateListings) };
+    })
+    .sortBy((dateGroup1, dateGroup2) => {
+      return moment(dateGroup1.date).diff(moment(dateGroup2.date));
     })
     .value();
 };
