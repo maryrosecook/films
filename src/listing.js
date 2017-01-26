@@ -12,7 +12,7 @@ let listingFns = {
   },
 
   time: function() {
-    return this.dateTime.format("HH:SS");
+    return this.dateTime.format("HH:mm");
   },
 
   partOfDay: function() {
