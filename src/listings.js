@@ -2,7 +2,7 @@
 
 let _ = require("underscore");
 
-function listings(listing, jsonObjects) {
+function fromJson(listing, jsonObjects) {
   return jsonObjects.map((obj) => {
     return listing(obj.dateTime, obj.film, obj.cinema);
   });
@@ -48,5 +48,7 @@ function alphabeticalSortOrder(a, b) {
   }
 };
 
-listings.groupByDateAndFilm = groupByDateAndFilm;
-module.exports = listings;
+module.exports = {
+  fromJson,
+  groupByDateAndFilm
+};

@@ -14,7 +14,7 @@ describe("listings", function() {
       }];
 
       let listing = jasmine.createSpy("listing");
-      listings(listing, jsonObjects);
+      listings.fromJson(listing, jsonObjects);
       expect(listing).toHaveBeenCalledWith(jsonObjects[0].dateTime,
                                            jsonObjects[0].film,
                                            jsonObjects[0].cinema);

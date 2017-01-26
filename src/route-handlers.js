@@ -19,7 +19,7 @@ function indexHandler(request, response) {
   moment.tz.setDefault("Europe/London");
   response.send(mustache.render(indexTemplate, {
     dates: listings.groupByDateAndFilm(
-      listings(listing, db.read(dataDir)))
+      listings.fromJson(listing, db.read(dataDir)))
   }));
 };
 
