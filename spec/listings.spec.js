@@ -34,7 +34,7 @@ describe("listings", function() {
           .groupByDateAndFilm(listingObjects);
 
       expect(dates).toEqual([{
-        date: date.format("YYYY-MM-DD"),
+        date: date.format("dddd Do MMMM"),
         films: [{
           film: "Margaret",
           listings: [{
@@ -62,10 +62,10 @@ describe("listings", function() {
       let dates = listings
           .groupByDateAndFilm(listingObjects);
 
-      expect(dates[0].date).toEqual(date1.format("YYYY-MM-DD"));
+      expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
       expect(dates[0].films[0].film).toEqual("Margaret");
 
-      expect(dates[1].date).toEqual(date2.format("YYYY-MM-DD"));
+      expect(dates[1].date).toEqual(date2.format("dddd Do MMMM"));
       expect(dates[1].films[0].film).toEqual("Heat");
     });
   });
