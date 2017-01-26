@@ -15,6 +15,7 @@ const dataDir = path.relative(process.cwd(),
 const indexTemplate = template("index.mustache");
 
 function indexHandler(request, response) {
+  moment.tz.setDefault("Europe/London");
   response.send(mustache.render(indexTemplate, {
     dates: listings.groupByDateAndFilm(
       listings(listing, db.read(dataDir)))
