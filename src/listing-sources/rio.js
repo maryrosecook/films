@@ -29,7 +29,10 @@ function extractListings(listing, pageContent) {
   setDatesOnShowings(showings);
   trimTitlesOnShowings(showings);
   return showings.map(function(showing) {
-    return listing(showing.dateTime, showing.title, "Rio Cinema");
+    return listing(showing.dateTime,
+                   showing.title,
+                   "Rio Cinema",
+                   url());
   });
 };
 

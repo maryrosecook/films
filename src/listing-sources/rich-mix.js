@@ -8,15 +8,17 @@ function formatUrlDate(dateObj) {
   return moment(dateObj).format("YYYY-MM-DD");
 };
 
-function url(startDateObj) {
+function url() {
+  let startDateObj = Date.now();
   let base = "https://www.richmix.org.uk/events/type/Film/";
   let startDate = formatUrlDate(startDateObj);
-  let endDate = formatUrlDate(moment(startDateObj).add(3, "months"));
+  let endDate = formatUrlDate(moment(startDateObj)
+                              .add(3, "months"));
   return `${base}${startDate}/${endDate}/next-week`;
 };
 
 function pageContent(requestPromise) {
-  return requestPromise(url(Date.now()));
+  return requestPromise(url());
 };
 
 function listings(requestPromise, listing) {
@@ -30,7 +32,8 @@ function extractListings(listing, pageContent) {
     .map(function(timeNode) {
       return listing(dateTime($, timeNode),
                      filmTitle($, timeNode),
-                     "Rich Mix");
+                     "Rich Mix",
+                     url());
     });
 };
 
@@ -47,6 +50,5 @@ function dateTime($, timeNode) {
 };
 
 module.exports = {
-  listings,
-  url
+  listings
 };

@@ -29,11 +29,12 @@ let listingFns = {
   }
 };
 
-function listing(dateTime, film, cinema) {
+function listing(dateTime, film, cinema, url) {
   var listing = Object.create(listingFns);
   listing.dateTime = moment(dateTime);
   listing.film = titleCase(remove2d3d(film));
   listing.cinema = cinema;
+  listing.url = url;
   return listing;
 };
 

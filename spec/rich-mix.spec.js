@@ -10,15 +10,9 @@ let listing = require("../src/listing");
 let stringRequestPromise = require("./string-request-promise");
 
 describe("scraping rich mix", function() {
-  describe("#url", function() {
-    it("should create full-listing URL", function() {
-      expect(richMix.url(moment("2016-12-20")))
-        .toEqual("https://www.richmix.org.uk/events/type/Film/2016-12-20/2017-03-20/next-week");
-    });
-  });
-
   describe("#listings", function() {
     let requestPromise;
+    let url =
     beforeEach(function() {
       let pageContent = fs.readFileSync(
         path.join(__dirname, "./pages/richmix.org.uk.html"),
@@ -27,22 +21,39 @@ describe("scraping rich mix", function() {
         stringRequestPromise(pageContent), listing);
     });
 
-    it("gets first time of first film", function(done) {
+    it("gets first film", function(done) {
       requestPromise.then(function(listings) {
-        expect(listings[0])
-          .toEqual(listing("2016-12-20T11:00:00+00:00",
-                           "Rogue One: A Star Wars Story 2D",
-                           "Rich Mix"));
+        expect(listings[0].dateTime)
+          .toEqual(moment("2016-12-20T11:00:00+00:00"));
+        expect(listings[0].film)
+          .toEqual("Rogue One A Star Wars Story");
+
         done();
       });
     });
 
-    it("gets last time of last film", function(done) {
+    it("gets last film", function(done) {
       requestPromise.then(function(listings) {
-        expect(_.last(listings))
-          .toEqual(listing("2017-02-16T19:00:00+00:00",
-                           "NT Live: Saint Joan",
-                           "Rich Mix"));
+        expect(_.last(listings).dateTime)
+          .toEqual(moment("2017-02-16T19:00:00+00:00"));
+        expect(_.last(listings).film)
+          .toEqual("Nt Live Saint Joan");
+
+        done();
+      });
+    });
+
+    it("adds cinema to listings", function(done) {
+      requestPromise.then(function(listings) {
+        expect(listings[0].cinema).toEqual("Rich Mix");
+        done();
+      });
+    });
+
+    it("adds url to listings", function(done) {
+      requestPromise.then(function(listings) {
+        expect(listings[0].url)
+          .toMatch(/https:\/\/www\.richmix\.org\.uk/);
         done();
       });
     });

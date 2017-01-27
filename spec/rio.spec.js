@@ -12,6 +12,8 @@ let stringRequestPromise = require("./string-request-promise");
 
 describe("scraping rio", function() {
   let requestPromise;
+  let url = "https://riocinema.org.uk/RioCinema.dll/Home";
+
   beforeEach(function() {
     let pageContent = fs.readFileSync(
       path.join(__dirname, "./pages/rio.html"),
@@ -22,27 +24,43 @@ describe("scraping rio", function() {
 
   it("gets first time of first film", function(done) {
     requestPromise.then(function(listings) {
-      expect(listings[0])
-        .toEqual(listing(moment()
-                           .startOf("day")
-                           .hours("14")
-                           .minutes("00"),
-                         "Trolls",
-                         "Rio Cinema"));
+      expect(listings[0].dateTime)
+        .toEqual(moment()
+                 .startOf("day")
+                 .hours("14")
+                 .minutes("00"));
+      expect(listings[0].film)
+        .toEqual("Trolls");
+
       done();
     });
   });
 
   it("gets last time of last film", function(done) {
     requestPromise.then(function(listings) {
-      expect(_.last(listings))
-        .toEqual(listing(moment()
-                         .startOf("day")
-                           .add(6, "days")
-                           .hours("20")
-                           .minutes("15"),
-                         "Silence",
-                         "Rio Cinema"));
+      expect(_.last(listings).dateTime)
+        .toEqual(moment()
+                 .startOf("day")
+                 .add(6, "days")
+                 .hours("20")
+                 .minutes("15"));
+      expect(_.last(listings).film)
+        .toEqual("Silence");
+
+      done();
+    });
+  });
+
+  it("adds cinema to listings", function(done) {
+    requestPromise.then(function(listings) {
+      expect(listings[0].cinema).toEqual("Rio Cinema");
+      done();
+    });
+  });
+
+  it("stores listing url", function(done) {
+    requestPromise.then(function(listings) {
+      expect(_.first(listings).url).toEqual(url);
       done();
     });
   });

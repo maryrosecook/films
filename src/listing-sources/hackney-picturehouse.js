@@ -8,7 +8,7 @@ function formatUrlDate(dateObj) {
   return moment(dateObj).format("YYYY-MM-DD");
 };
 
-function url(startDateObj) {
+function url() {
   return "https://www.picturehouses.com/cinema/Hackney_Picturehouse/Whats_On";
 };
 
@@ -27,7 +27,8 @@ function extractListings(listing, pageContent) {
     .map(function(timeNode) {
       return listing(dateTime($, timeNode),
                      removeCertificate(filmTitle($, timeNode)),
-                     "Hackney Picturehouse");
+                     "Hackney Picturehouse",
+                     url());
     });
 };
 
