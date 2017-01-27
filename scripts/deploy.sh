@@ -1,7 +1,7 @@
 printf "Pulling latest code\n\n"
 git pull origin master
 
-printf "Install dependencies\n\n"
+printf "Installing dependencies\n\n"
 
 npm install
 
