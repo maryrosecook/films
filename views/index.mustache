@@ -13,7 +13,9 @@
           <h3>{{film}}</h3>
           <div>
             {{#listings}}
-              <span class="{{partOfDay}}">{{time}}</span>
+              <span class="{{partOfDay}}">
+                <a href="{{url}}">{{time}}</a>
+              </span>
             {{/listings}}
           </div>
         </div>
