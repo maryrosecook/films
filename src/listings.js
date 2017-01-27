@@ -15,7 +15,7 @@ function todayAndAfter(listings) {
 
 function fromJson(listing, jsonObjects) {
   return jsonObjects.map((obj) => {
-    return listing(obj.dateTime, obj.film, obj.cinema);
+    return listing(obj.dateTime, obj.film, obj.cinema, obj.url);
   });
 };
 

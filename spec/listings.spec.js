@@ -10,14 +10,16 @@ describe("listings", function() {
       let jsonObjects = [{
         dateTime: "2016-12-20T11:00:00+00:00",
         film: "Margaret",
-        cinema: "Rich Mix"
+        cinema: "Rich Mix",
+        url: "http://richmix.org/listings"
       }];
 
       let listing = jasmine.createSpy("listing");
       listings.fromJson(listing, jsonObjects);
       expect(listing).toHaveBeenCalledWith(jsonObjects[0].dateTime,
                                            jsonObjects[0].film,
-                                           jsonObjects[0].cinema);
+                                           jsonObjects[0].cinema,
+                                           jsonObjects[0].url);
     });
   });
 
