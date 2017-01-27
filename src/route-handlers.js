@@ -18,8 +18,8 @@ const indexTemplate = template("index.mustache");
 function indexHandler(request, response) {
   moment.tz.setDefault("Europe/London");
   response.send(mustache.render(indexTemplate, {
-    dates: listings.groupByDateAndFilm(
-      listings.fromJson(listing, db.read(dataDir)))
+    dates: listings.prepare(listings.fromJson(listing,
+                                              db.read(dataDir)))
   }));
 };
 

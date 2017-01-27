@@ -21,7 +21,7 @@ describe("listings", function() {
     });
   });
 
-  describe("#groupByDateAndFilm", function() {
+  describe("#prepare", function() {
     it("groups by date and then film", function() {
       let date = moment();
       let listingObjects = [{
@@ -31,7 +31,7 @@ describe("listings", function() {
       }];
 
       let dates = listings
-          .groupByDateAndFilm(listingObjects);
+          .prepare(listingObjects);
 
       expect(dates).toEqual([{
         date: date.format("dddd Do MMMM"),
@@ -60,7 +60,7 @@ describe("listings", function() {
       }];
 
       let dates = listings
-          .groupByDateAndFilm(listingObjects);
+          .prepare(listingObjects);
 
       expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
       expect(dates[0].films[0].film).toEqual("Margaret");
@@ -78,10 +78,28 @@ describe("listings", function() {
       ];
 
       let dates = listings
-          .groupByDateAndFilm(listingObjects);
+          .prepare(listingObjects);
 
       expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
       expect(dates[1].date).toEqual(date2.format("dddd Do MMMM"));
+    });
+
+    it("omits listings before today", function() {
+      let yesterday = moment().subtract(1, "day");
+      let today = moment();
+      let tomorrow = moment().add(1, "day");
+      let listingObjects = [
+        { dateTime: yesterday, film: "Heat", cinema: "" },
+        { dateTime: today, film: "Heat", cinema: "" },
+        { dateTime: tomorrow, film: "Heat", cinema: "" }
+      ];
+
+      let dates = listings.prepare(listingObjects);
+
+      expect(dates[0].date)
+        .toEqual(today.format("dddd Do MMMM"));
+      expect(dates[1].date)
+        .toEqual(tomorrow.format("dddd Do MMMM"));
     });
   });
 });

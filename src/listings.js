@@ -3,6 +3,16 @@
 let _ = require("underscore");
 let moment = require("moment-timezone");
 
+function prepare(listings) {
+  return groupByDateAndFilm(todayAndAfter(listings));
+};
+
+function todayAndAfter(listings) {
+   return listings.filter(function(listing) {
+     return listing.dateTime.isAfter(moment().startOf("day"));
+   });
+};
+
 function fromJson(listing, jsonObjects) {
   return jsonObjects.map((obj) => {
     return listing(obj.dateTime, obj.film, obj.cinema);
@@ -60,5 +70,5 @@ function alphabeticalSortOrder(a, b) {
 
 module.exports = {
   fromJson,
-  groupByDateAndFilm
+  prepare
 };
