@@ -68,5 +68,20 @@ describe("listings", function() {
       expect(dates[1].date).toEqual(date2.format("dddd Do MMMM"));
       expect(dates[1].films[0].film).toEqual("Heat");
     });
+
+    it("sorts date groups chronologically", function() {
+      let date1 = moment();
+      let date2 = moment().add(1, "day");
+      let listingObjects = [
+        { dateTime: date2, film: "Heat", cinema: "" },
+        { dateTime: date1, film: "Heat", cinema: "" }
+      ];
+
+      let dates = listings
+          .groupByDateAndFilm(listingObjects);
+
+      expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
+      expect(dates[1].date).toEqual(date2.format("dddd Do MMMM"));
+    });
   });
 });
