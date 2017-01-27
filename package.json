@@ -7,7 +7,7 @@
     "test": "nodemon -q -x 'node --harmony node_modules/jasmine/bin/jasmine.js'",
     "scrape": "node --harmony scripts/scrape.js",
     "start": "nodemon -q -e js,mustache -x 'node --harmony src/app.js'",
-    "deploy": "bash scripts/deploy.sh"
+    "deploy": "git push origin master && ssh do 'bash -s' < scripts/deploy.sh"
   },
   "author": "",
   "license": "ISC",

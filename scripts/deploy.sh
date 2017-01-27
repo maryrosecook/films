@@ -1,17 +1,4 @@
-printf "Pulling latest code\n\n"
+cd ~/node-sites/films/
 git pull origin master
-
-printf "Installing dependencies\n\n"
-
 npm install
-
-printf "\n"
-
-printf "Restarting site\n\n"
 pm2 restart films
-
-printf "\n"
-
-printf "Site status:\n"
-
-pm2 list
