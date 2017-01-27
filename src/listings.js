@@ -20,6 +20,12 @@ function groupByDateAndFilm(listings) {
     .sortBy((dateGroup1, dateGroup2) => {
       return moment(dateGroup1.date).diff(moment(dateGroup2.date));
     })
+    .map((dateGroup) => {
+      return {
+        date: moment(dateGroup.date).format("dddd Do MMMM"),
+        films: dateGroup.films
+      };
+    })
     .value();
 };
 
