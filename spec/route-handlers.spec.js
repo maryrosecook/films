@@ -39,7 +39,8 @@ describe("routeHandlers", function() {
 
       routeHandlers.listings(requestMock, responseMock);
 
-      expect(db.read.calls.argsFor(0)[0]).toEqual("data");
+      expect(db.read.calls.argsFor(0)[0])
+        .toEqual("data/listings.json");
       expect(responseMock.json)
         .toHaveBeenCalledWith(listings);
     });

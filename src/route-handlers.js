@@ -10,21 +10,22 @@ let db = require("./db");
 let listing = require("./listing");
 let listings = require("./listings");
 
-const dataDir = path.relative(process.cwd(),
-                              path.join(__dirname, "../data"));
+const LISTINGS_PATH = path.relative(
+  process.cwd(),
+  path.join(__dirname, "../data", "listings.json"));
 
 const indexTemplate = template("index.mustache");
 
 function indexHandler(request, response) {
   moment.tz.setDefault("Europe/London");
   response.send(mustache.render(indexTemplate, {
-    dates: listings.prepare(listings.fromJson(listing,
-                                              db.read(dataDir)))
+    dates: listings.prepare(
+      listings.fromJson(listing, db.read(LISTINGS_PATH)))
   }));
 };
 
 function listingsHandler(request, response) {
-  response.json(db.read(dataDir));
+  response.json(db.read(LISTINGS_PATH));
 };
 
 function template(templateFilename) {

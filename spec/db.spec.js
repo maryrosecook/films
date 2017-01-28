@@ -21,20 +21,20 @@ describe("db", function() {
     });
 
     it("writes data when no data folder", function() {
-      db.write(DATA_DIR, listings);
-      expect(db.read(DATA_DIR)).toEqual(listings);
+      db.write(DATA_FILEPATH, listings);
+      expect(db.read(DATA_FILEPATH)).toEqual(listings);
     });
 
     it("writes data when data folder already there", function() {
-      db.write(DATA_DIR, listings);
+      db.write(DATA_FILEPATH, listings);
       expect(fs.existsSync(DATA_DIR)).toEqual(true);
-      db.write(DATA_DIR, listings);
-      expect(db.read(DATA_DIR)).toEqual(listings);
+      db.write(DATA_FILEPATH, listings);
+      expect(db.read(DATA_FILEPATH)).toEqual(listings);
     });
 
     it("returns empty array when no data file", function() {
       expect(fs.existsSync(DATA_DIR)).toEqual(false);
-      expect(db.read(DATA_DIR)).toEqual([]);
+      expect(db.read(DATA_FILEPATH)).toEqual([]);
     });
   });
 });

@@ -8,13 +8,15 @@ let listingSources = require("../src/listing-sources");
 let scrapeListings = require("../src/scrape-listings");
 let db = require("../src/db");
 
-const DATA_DIR = path.join(__dirname, "../data");
+const LISTINGS_FILEPATH = path.join(__dirname,
+                                    "../data",
+                                    "listings.json");
 
 function scrape() {
   return scrapeListings(listingSources(), requestPromise)
     .then(function(listings) {
       report(listings);
-      save(DATA_DIR, listings);
+      save(LISTINGS_FILEPATH, listings);
     });
 };
 
@@ -22,8 +24,8 @@ function report(listings) {
   console.log(`Saving ${listings.length} listings`);
 };
 
-function save(dataDir, listings) {
-  db.write(dataDir, listings);
+function save(listingsFilepath, listings) {
+  db.write(listingsFilepath, listings);
 };
 
 if (require.main === module) {
