@@ -16,10 +16,12 @@ const TRAILERS_FILEPATH = path.join(__dirname,
 
 function scrapeTrailers() {
   return trailerUrls(films())
-    .then(function(trailerUrls) {
-      report(trailerUrls);
-      save(TRAILERS_FILEPATH, trailerUrls);
-    });
+    .then(reportAndSave);
+};
+
+function reportAndSave(trailerUrls) {
+  report(trailerUrls);
+  save(TRAILERS_FILEPATH, trailerUrls);
 };
 
 function resolveDespiteFailure(promise) {
