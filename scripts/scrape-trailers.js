@@ -35,15 +35,16 @@ function resolveDespiteFailure(promise) {
 function trailerUrls(films) {
   return Promise.all(
     films
-      .map((film) => {
-        let query = `${film} trailer`;
-        return resolveDespiteFailure(youtube(query));
-      })
+      .map(_.compose(resolveDespiteFailure, youtube, createQuery))
   ).then((trailerUrls) => {
     return _.pick(_.object(films, trailerUrls), (value) => {
       return value;
     });
   });
+};
+
+function createQuery(film) {
+  return `${film} trailer`;
 };
 
 function report(trailerUrls) {
