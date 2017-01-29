@@ -10,7 +10,7 @@ let trailers = require("../src/trailers");
 describe("#trailers", function() {
   it("returns object mapping films to trailer urls", function() {
     let trailerData = [{
-      "Cameraperson": "https://www.youtube.com/watch?v=jx52F4iLTL8"
+      "Cameraperson": "https://www.youtube.com/embed/2GfZl4kuVNI"
     }];
 
     let db = { read: sinon.stub().returns(trailerData) };

@@ -43,7 +43,7 @@ describe("#youtube", function() {
     youtube("heat trailer")
       .then((result) => {
         expect(result)
-          .toEqual("https://www.youtube.com/watch?v=2GfZl4kuVNI");
+          .toEqual("https://www.youtube.com/embed/2GfZl4kuVNI");
         done();
       })
   });
