@@ -19,6 +19,7 @@ const indexTemplate = template("index.mustache");
 
 function indexHandler(request, response) {
   moment.tz.setDefault("Europe/London");
+
   response.send(mustache.render(indexTemplate, {
     dates: presentedListings.prepare(
       listings(listing))

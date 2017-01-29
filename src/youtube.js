@@ -26,7 +26,7 @@ function searchResultVideoId(result) {
 };
 
 function youtubeUrlFromVideoId(videoId) {
-  return `https://www.youtube.com/watch?v=${videoId}`;
+  return `https://www.youtube.com/embed/${videoId}`;
 };
 
 function authenticatedInstance() {

@@ -5,8 +5,8 @@ let proxyquire = require("proxyquire");
 
 let listings = require("../src/listings");
 
-describe("#fromJson", function() {
-  it("creates array of listings from object array", function() {
+describe("#listings", function() {
+  it("returns array of listings", function() {
     let jsonObjects = [{
       dateTime: "2016-12-20T11:00:00+00:00",
       film: "Margaret",

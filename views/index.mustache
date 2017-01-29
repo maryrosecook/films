@@ -11,6 +11,7 @@
       {{#films}}
         <div>
           <h3>{{film}}</h3>
+
           <div>
             {{#listings}}
               <span class="{{partOfDay}}">
@@ -18,6 +19,8 @@
               </span>
             {{/listings}}
           </div>
+
+          <div><a href="{{trailer}}">Trailer</a></div>
         </div>
         <br/>
       {{/films}}

@@ -3,6 +3,8 @@
 let _ = require("underscore");
 let moment = require("moment-timezone");
 
+let trailers = require("./trailers");
+
 function prepare(listings) {
   return groupByDateAndFilm(todayAndAfter(listings));
 };
@@ -46,10 +48,20 @@ function prepareFilms(listings) {
     })
     .groupBy(_.property("film"))
     .map(argumentsObject(["listings", "film"]))
+    .map(addTrailer)
     .sort((a, b) => {
       return alphabeticalSortOrder(a.film, b.film);
     })
     .value();
+};
+
+function addTrailer(filmListingsBlock) {
+  let trailerData = trailers();
+  if (filmListingsBlock.film in trailerData) {
+    filmListingsBlock.trailer = trailers()[filmListingsBlock.film];
+  }
+
+  return filmListingsBlock;
 };
 
 function alphabeticalSortOrder(a, b) {

@@ -1,89 +1,139 @@
 "use strict";
 
+let proxyquire = require("proxyquire");
+let sinon = require("sinon");
+
 let moment = require("moment");
 
 let presentedListings = require("../src/presented-listings");
 
 describe("presentedListings", function() {
   describe("#prepare", function() {
-    it("groups by date and then film", function() {
-      let date = moment();
-      let listingObjects = [{
-        dateTime: date,
-        film: "Margaret",
-        cinema: "Rich Mix"
-      }];
-
-      let dates = presentedListings
-          .prepare(listingObjects);
-
-      expect(dates).toEqual([{
-        date: date.format("dddd Do MMMM"),
-        films: [{
+    describe("grouping", function() {
+      it("groups by date and then film", function() {
+        let date = moment();
+        let listingObjects = [{
+          dateTime: date,
           film: "Margaret",
-          listings: [{
-            dateTime: date,
+          cinema: "Rich Mix"
+        }];
+
+        let dates = presentedListings
+            .prepare(listingObjects);
+
+        expect(dates).toEqual([{
+          date: date.format("dddd Do MMMM"),
+          films: [{
             film: "Margaret",
-            cinema: "Rich Mix"
+            listings: [{
+              dateTime: date,
+              film: "Margaret",
+              cinema: "Rich Mix"
+            }]
           }]
-        }]
-      }])
+        }])
+      });
+
+      it("groups films by date", function() {
+        let date1 = moment();
+        let date2 = moment().add(1, "day");
+        let listingObjects = [{
+          dateTime: date1,
+          film: "Margaret",
+          cinema: "Rich Mix"
+        }, {
+          dateTime: date2,
+          film: "Heat",
+          cinema: "Rich Mix"
+        }];
+
+        let dates = presentedListings
+            .prepare(listingObjects);
+
+        expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
+        expect(dates[0].films[0].film).toEqual("Margaret");
+
+        expect(dates[1].date).toEqual(date2.format("dddd Do MMMM"));
+        expect(dates[1].films[0].film).toEqual("Heat");
+      });
     });
 
-    it("groups films by date", function() {
-      let date1 = moment();
-      let date2 = moment().add(1, "day");
-      let listingObjects = [{
-        dateTime: date1,
-        film: "Margaret",
-        cinema: "Rich Mix"
-      }, {
-        dateTime: date2,
-        film: "Heat",
-        cinema: "Rich Mix"
-      }];
+    describe("sorting", function() {
+      it("sorts date groups chronologically", function() {
+        let date1 = moment();
+        let date2 = moment().add(1, "day");
+        let listingObjects = [
+          { dateTime: date2, film: "Heat", cinema: "" },
+          { dateTime: date1, film: "Heat", cinema: "" }
+        ];
 
-      let dates = presentedListings
-          .prepare(listingObjects);
+        let dates = presentedListings
+            .prepare(listingObjects);
 
-      expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
-      expect(dates[0].films[0].film).toEqual("Margaret");
-
-      expect(dates[1].date).toEqual(date2.format("dddd Do MMMM"));
-      expect(dates[1].films[0].film).toEqual("Heat");
+        expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
+        expect(dates[1].date).toEqual(date2.format("dddd Do MMMM"));
+      });
     });
 
-    it("sorts date groups chronologically", function() {
-      let date1 = moment();
-      let date2 = moment().add(1, "day");
-      let listingObjects = [
-        { dateTime: date2, film: "Heat", cinema: "" },
-        { dateTime: date1, film: "Heat", cinema: "" }
-      ];
+    describe("filtering listings", function() {
+      it("omits listings before today", function() {
+        let yesterday = moment().subtract(1, "day");
+        let today = moment();
+        let tomorrow = moment().add(1, "day");
+        let listingObjects = [
+          { dateTime: yesterday, film: "Heat", cinema: "" },
+          { dateTime: today, film: "Heat", cinema: "" },
+          { dateTime: tomorrow, film: "Heat", cinema: "" }
+        ];
 
-      let dates = presentedListings
-          .prepare(listingObjects);
+        let dates = presentedListings.prepare(listingObjects);
 
-      expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
-      expect(dates[1].date).toEqual(date2.format("dddd Do MMMM"));
+        expect(dates[0].date)
+          .toEqual(today.format("dddd Do MMMM"));
+        expect(dates[1].date)
+          .toEqual(tomorrow.format("dddd Do MMMM"));
+      });
     });
 
-    it("omits listings before today", function() {
-      let yesterday = moment().subtract(1, "day");
-      let today = moment();
-      let tomorrow = moment().add(1, "day");
-      let listingObjects = [
-        { dateTime: yesterday, film: "Heat", cinema: "" },
-        { dateTime: today, film: "Heat", cinema: "" },
-        { dateTime: tomorrow, film: "Heat", cinema: "" }
-      ];
+    describe("trailers", function() {
+      it("adds trailer when one is known", function() {
+        let trailerData = {
+          Margaret: "https://www.youtube.com/watch?v=jx52F4iLTL8"
+        };
 
-      let dates = presentedListings.prepare(listingObjects);
+        let presentedListings =
+            proxyquire("../src/presented-listings", {
+              "./trailers": sinon.stub().returns(trailerData)
+            });
 
-      expect(dates[0].date)
-        .toEqual(today.format("dddd Do MMMM"));
-      expect(dates[1].date)
-        .toEqual(tomorrow.format("dddd Do MMMM"));
+        let dates = presentedListings.prepare([
+          { film: "Margaret", dateTime: moment() }
+        ]);
+
+        let filmListingsBlock = dates[0].films[0]
+
+        expect(filmListingsBlock.film).toEqual("Margaret");
+        expect(filmListingsBlock.trailer)
+          .toEqual(trailerData["Margaret"]);
+      });
+
+      it("doesn't add trailer when one not known", function() {
+        let trailerData = {};
+
+        let presentedListings =
+            proxyquire("../src/presented-listings", {
+              "./trailers": sinon.stub().returns(trailerData)
+            });
+
+        let dates = presentedListings.prepare([
+          { film: "Margaret", dateTime: moment() }
+        ]);
+
+        let filmListingsBlock = dates[0].films[0]
+
+        expect(filmListingsBlock.film).toEqual("Margaret");
+        expect(filmListingsBlock.trailer).toBeUndefined();
+      });
     });
   });
 });
