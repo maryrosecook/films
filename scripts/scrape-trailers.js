@@ -54,9 +54,7 @@ function save(filepath, trailers) {
 
 function films() {
   return _.chain(listings(listing))
-    .map((listing) => {
-      return listing.film;
-    })
+    .pluck("film")
     .uniq()
     .value();
 };
