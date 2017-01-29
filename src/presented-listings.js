@@ -13,12 +13,6 @@ function todayAndAfter(listings) {
    });
 };
 
-function fromJson(listing, jsonObjects) {
-  return jsonObjects.map((obj) => {
-    return listing(obj.dateTime, obj.film, obj.cinema, obj.url);
-  });
-};
-
 function groupByDateAndFilm(listings) {
   return _.chain(listings)
     .groupBy((listing) => {
@@ -69,6 +63,5 @@ function alphabeticalSortOrder(a, b) {
 };
 
 module.exports = {
-  fromJson,
   prepare
 };

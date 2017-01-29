@@ -5,24 +5,6 @@ let moment = require("moment");
 let presentedListings = require("../src/presented-listings");
 
 describe("presentedListings", function() {
-  describe("#presentedListings", function() {
-    it("creates array of listings from object array", function() {
-      let jsonObjects = [{
-        dateTime: "2016-12-20T11:00:00+00:00",
-        film: "Margaret",
-        cinema: "Rich Mix",
-        url: "http://richmix.org/listings"
-      }];
-
-      let listing = jasmine.createSpy("listing");
-      presentedListings.fromJson(listing, jsonObjects);
-      expect(listing).toHaveBeenCalledWith(jsonObjects[0].dateTime,
-                                           jsonObjects[0].film,
-                                           jsonObjects[0].cinema,
-                                           jsonObjects[0].url);
-    });
-  });
-
   describe("#prepare", function() {
     it("groups by date and then film", function() {
       let date = moment();

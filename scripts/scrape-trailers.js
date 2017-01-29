@@ -7,16 +7,12 @@ let _ = require("underscore");
 let youtube = require("../src/youtube");
 let db = require("../src/db");
 let listing = require("../src/listing");
+let listings = require("../src/listings");
 let presentedListings = require("../src/presented-listings");
 
 const TRAILERS_FILEPATH = path.join(__dirname,
                                     "../data",
                                     "trailers.json");
-
-const LISTINGS_FILEPATH = path.join(__dirname,
-                                    "../data",
-                                    "listings.json");
-
 
 function scrapeTrailers() {
   return trailerUrls(films())
@@ -57,10 +53,7 @@ function save(filepath, trailers) {
 };
 
 function films() {
-  let allListings = presentedListings.fromJson(
-    listing,
-    db.read(LISTINGS_FILEPATH));
-  return _.chain(allListings)
+  return _.chain(listings(listing))
     .map((listing) => {
       return listing.film;
     })
