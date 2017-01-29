@@ -8,7 +8,7 @@ let moment = require("moment-timezone");
 
 let db = require("./db");
 let listing = require("./listing");
-let listings = require("./listings");
+let presentedListings = require("./presented-listings");
 
 const LISTINGS_PATH = path.relative(
   process.cwd(),
@@ -19,8 +19,8 @@ const indexTemplate = template("index.mustache");
 function indexHandler(request, response) {
   moment.tz.setDefault("Europe/London");
   response.send(mustache.render(indexTemplate, {
-    dates: listings.prepare(
-      listings.fromJson(listing, db.read(LISTINGS_PATH)))
+    dates: presentedListings.prepare(
+      presentedListings.fromJson(listing, db.read(LISTINGS_PATH)))
   }));
 };
 

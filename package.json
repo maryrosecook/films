@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon -q -x 'node --harmony node_modules/jasmine/bin/jasmine.js'",
-    "scrape": "node --harmony scripts/scrape.js",
+    "scrape": "node --harmony scripts/scrape-listings.js && node --harmony scripts/scrape-trailers.js",
     "start": "nodemon -q -e js,mustache -x 'node --harmony src/app.js'",
     "deploy": "git push origin master && ssh do 'bash -s' < scripts/deploy.sh"
   },

@@ -2,10 +2,10 @@
 
 let moment = require("moment");
 
-let listings = require("../src/listings");
+let presentedListings = require("../src/presented-listings");
 
-describe("listings", function() {
-  describe("#listings", function() {
+describe("presentedListings", function() {
+  describe("#presentedListings", function() {
     it("creates array of listings from object array", function() {
       let jsonObjects = [{
         dateTime: "2016-12-20T11:00:00+00:00",
@@ -15,7 +15,7 @@ describe("listings", function() {
       }];
 
       let listing = jasmine.createSpy("listing");
-      listings.fromJson(listing, jsonObjects);
+      presentedListings.fromJson(listing, jsonObjects);
       expect(listing).toHaveBeenCalledWith(jsonObjects[0].dateTime,
                                            jsonObjects[0].film,
                                            jsonObjects[0].cinema,
@@ -32,7 +32,7 @@ describe("listings", function() {
         cinema: "Rich Mix"
       }];
 
-      let dates = listings
+      let dates = presentedListings
           .prepare(listingObjects);
 
       expect(dates).toEqual([{
@@ -61,7 +61,7 @@ describe("listings", function() {
         cinema: "Rich Mix"
       }];
 
-      let dates = listings
+      let dates = presentedListings
           .prepare(listingObjects);
 
       expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
@@ -79,7 +79,7 @@ describe("listings", function() {
         { dateTime: date1, film: "Heat", cinema: "" }
       ];
 
-      let dates = listings
+      let dates = presentedListings
           .prepare(listingObjects);
 
       expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
@@ -96,7 +96,7 @@ describe("listings", function() {
         { dateTime: tomorrow, film: "Heat", cinema: "" }
       ];
 
-      let dates = listings.prepare(listingObjects);
+      let dates = presentedListings.prepare(listingObjects);
 
       expect(dates[0].date)
         .toEqual(today.format("dddd Do MMMM"));
