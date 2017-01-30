@@ -1,7 +1,7 @@
 "use strict";
 
 require('dotenv').config();
-var YouTube = require('youtube-node');
+let YouTube = require('youtube-node');
 
 function youtube(query) {
   return new Promise(function(resolve, reject) {
