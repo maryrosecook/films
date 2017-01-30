@@ -5,14 +5,8 @@ let path = require("path");
 
 let scrapeListings = require("../src/scrape-listings.js");
 let richMix = require("../src/listing-sources/rich-mix.js");
+const stringRequestPromise = require("./string-request-promise");
 
-function createRequestPromise(content) {
-  return function() {
-    return new Promise(function(resolve) {
-      return resolve(content);
-    });
-  };
-};
 
 describe("#scrapeListings", function() {
   it("returns listings for two cinemas", function(done) {
@@ -20,7 +14,7 @@ describe("#scrapeListings", function() {
 
     var pageHtml = fs.readFileSync(
       path.join(__dirname, "./pages/richmix.org.uk.html"), "utf8");
-    var requestPromise = createRequestPromise(pageHtml);
+    var requestPromise = stringRequestPromise(pageHtml);
 
     scrapeListings(cinemas, requestPromise)
       .then(function(listings) {
