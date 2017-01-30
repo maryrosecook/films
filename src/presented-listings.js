@@ -10,9 +10,9 @@ function prepare(listings) {
 };
 
 function todayAndAfter(listings) {
-   return listings.filter(function(listing) {
-     return listing.dateTime.isAfter(moment().startOf("day"));
-   });
+  return listings.filter(function(listing) {
+    return listing.dateTime.isAfter(moment().startOf("day"));
+  });
 };
 
 function groupByDateAndFilm(listings) {
