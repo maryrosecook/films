@@ -5,12 +5,17 @@ let sinon = require("sinon");
 
 let moment = require("moment");
 
-let presentedListings = require("../src/presented-listings");
-
 describe("presentedListings", function() {
   describe("#prepare", function() {
     describe("grouping", function() {
       it("groups by date and then film", function() {
+        let presentedListings = proxyquire(
+          "../src/presented-listings", {
+            "./trailers": sinon.stub().returns({
+              Margaret: "https://www.youtube.com/watch?v=7YAiS-3E"
+            })
+          });
+
         let date = moment();
         let listingObjects = [{
           dateTime: date,
@@ -25,6 +30,7 @@ describe("presentedListings", function() {
           date: date.format("dddd Do MMMM"),
           films: [{
             film: "Margaret",
+            trailer: "https://www.youtube.com/watch?v=7YAiS-3E",
             listings: [{
               dateTime: date,
               film: "Margaret",
@@ -35,6 +41,11 @@ describe("presentedListings", function() {
       });
 
       it("groups films by date", function() {
+        let presentedListings = proxyquire(
+          "../src/presented-listings", {
+            "./trailers": sinon.stub().returns({})
+          });
+
         let date1 = moment();
         let date2 = moment().add(1, "day");
         let listingObjects = [{
@@ -60,6 +71,11 @@ describe("presentedListings", function() {
 
     describe("sorting", function() {
       it("sorts date groups chronologically", function() {
+        let presentedListings = proxyquire(
+          "../src/presented-listings", {
+            "./trailers": sinon.stub().returns({})
+          });
+
         let date1 = moment();
         let date2 = moment().add(1, "day");
         let listingObjects = [
@@ -77,6 +93,11 @@ describe("presentedListings", function() {
 
     describe("filtering listings", function() {
       it("omits listings before today", function() {
+        let presentedListings = proxyquire(
+          "../src/presented-listings", {
+            "./trailers": sinon.stub().returns({})
+          });
+
         let yesterday = moment().subtract(1, "day");
         let today = moment();
         let tomorrow = moment().add(1, "day");
