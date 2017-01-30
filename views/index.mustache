@@ -13,11 +13,16 @@
           <h3>{{film}}</h3>
 
           <div>
-            {{#listings}}
-              <span class="{{partOfDay}}">
-                <a href="{{url}}">{{time}}</a>
-              </span>
-            {{/listings}}
+            {{#cinemas}}
+              <div>
+                {{#listings}}
+                  <span class="{{partOfDay}}">
+                    <a href="{{url}}">{{time}}</a>
+                  </span>
+                {{/listings}}
+                &nbsp;({{cinema}})
+              </div>
+            {{/cinemas}}
           </div>
 
           {{#trailer}} {{! making block so no render if no trailer}}

@@ -48,11 +48,23 @@ function prepareFilms(listings) {
     })
     .groupBy(_.property("film"))
     .map(argumentsObject(["listings", "film"]))
+    .map(listingsByCinema)
     .map(addTrailer)
     .sort((a, b) => {
       return alphabeticalSortOrder(a.film, b.film);
     })
     .value();
+};
+
+function listingsByCinema(filmAndListings) {
+  filmAndListings.cinemas =
+    _.chain(filmAndListings.listings)
+    .groupBy(_.property("cinema"))
+    .map(argumentsObject(["listings", "cinema"]))
+    .value();
+
+  delete filmAndListings["listings"];
+  return filmAndListings;
 };
 
 function addTrailer(filmListingsBlock) {

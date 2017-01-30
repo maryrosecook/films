@@ -2,7 +2,7 @@
 
 let proxyquire = require("proxyquire");
 let sinon = require("sinon");
-
+const util = require("util");
 let moment = require("moment");
 
 describe("presentedListings", function() {
@@ -31,10 +31,13 @@ describe("presentedListings", function() {
           films: [{
             film: "Margaret",
             trailer: "https://www.youtube.com/watch?v=7YAiS-3E",
-            listings: [{
-              dateTime: date,
-              film: "Margaret",
-              cinema: "Rich Mix"
+            cinemas: [{
+              cinema: "Rich Mix",
+              listings: [{
+                dateTime: date,
+                film: "Margaret",
+                cinema: "Rich Mix"
+              }]
             }]
           }]
         }])
