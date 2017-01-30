@@ -3,7 +3,7 @@
 let _ = require("underscore");
 let moment = require("moment-timezone");
 
-let trailers = require("./trailers");
+let loadTrailers = require("./load-trailers");
 
 function prepare(listings) {
   return groupByDateAndFilm(todayAndAfter(listings));
@@ -68,9 +68,10 @@ function listingsByCinema(filmAndListings) {
 };
 
 function addTrailer(filmListingsBlock) {
-  let trailerData = trailers();
+  let trailerData = loadTrailers();
   if (filmListingsBlock.film in trailerData) {
-    filmListingsBlock.trailer = trailers()[filmListingsBlock.film];
+    filmListingsBlock.trailer =
+      trailerData[filmListingsBlock.film];
   }
 
   return filmListingsBlock;

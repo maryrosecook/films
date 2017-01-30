@@ -5,9 +5,7 @@ let path = require("path");
 let sinon = require("sinon");
 let proxyquire = require("proxyquire");
 
-let trailers = require("../src/trailers");
-
-describe("#trailers", function() {
+describe("#imdb-search", function() {
   it("returns details of film searched for", function(done) {
     let filmData = {
       title: 'Heat',

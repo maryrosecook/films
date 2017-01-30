@@ -2,7 +2,6 @@
 
 let proxyquire = require("proxyquire");
 let sinon = require("sinon");
-const util = require("util");
 let moment = require("moment");
 
 describe("presentedListings", function() {
@@ -11,7 +10,7 @@ describe("presentedListings", function() {
       it("groups by date and then film", function() {
         let presentedListings = proxyquire(
           "../src/presented-listings", {
-            "./trailers": sinon.stub().returns({
+            "./load-trailers": sinon.stub().returns({
               Margaret: "https://www.youtube.com/watch?v=7YAiS-3E"
             })
           });
@@ -46,7 +45,7 @@ describe("presentedListings", function() {
       it("groups films by date", function() {
         let presentedListings = proxyquire(
           "../src/presented-listings", {
-            "./trailers": sinon.stub().returns({})
+            "./load-trailers": sinon.stub().returns({})
           });
 
         let date1 = moment();
@@ -127,7 +126,7 @@ describe("presentedListings", function() {
 
         let presentedListings =
             proxyquire("../src/presented-listings", {
-              "./trailers": sinon.stub().returns(trailerData)
+              "./load-trailers": sinon.stub().returns(trailerData)
             });
 
         let dates = presentedListings.prepare([

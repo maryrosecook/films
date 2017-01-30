@@ -8,8 +8,8 @@ const TRAILERS_FILEPATH = path.join(__dirname,
                                     "../data",
                                     "trailers.json");
 
-function trailers() {
+function loadTrailers() {
   return db.read(TRAILERS_FILEPATH);
 };
 
-module.exports = trailers;
+module.exports = loadTrailers;
