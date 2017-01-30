@@ -1,5 +1,6 @@
 "use strict";
 
+const moment = require("moment");
 let sinon = require("sinon");
 let proxyquire = require("proxyquire");
 
@@ -16,11 +17,12 @@ describe("#listings", function() {
       "../src/db": { read: sinon.stub().returns(jsonObjects) }
     });
 
-    let listing = jasmine.createSpy("listing");
-    loadListings(listing);
-    expect(listing).toHaveBeenCalledWith(jsonObjects[0].dateTime,
-                                         jsonObjects[0].film,
-                                         jsonObjects[0].cinema,
-                                         jsonObjects[0].url);
+    let listing = loadListings()[0];
+    let jsonObject = jsonObjects[0];
+
+    expect(listing.dateTime).toEqual(moment(jsonObject.dateTime));
+    expect(listing.film).toEqual(jsonObject.film);
+    expect(listing.cinema).toEqual(jsonObject.cinema);
+    expect(listing.url).toEqual(jsonObject.url);
   });
 });
