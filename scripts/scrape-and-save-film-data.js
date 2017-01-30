@@ -11,18 +11,18 @@ const FILMS_FILEPATH = path.join(__dirname,
 
 function scrapeAndSaveFilmData() {
   return scrapeTrailers()
-    .then(function(films) {
-      report(films);
-      save(FILMS_FILEPATH, films);
+    .then(function(filmData) {
+      report(filmData);
+      save(FILMS_FILEPATH, filmData);
     });
 };
 
-function report(films) {
-  console.log(`Saving ${Object.keys(films).length} films`);
+function report(filmData) {
+  console.log(`Saving ${Object.keys(filmData).length} films`);
 };
 
-function save(filmsFilepath, films) {
-  db.write(filmsFilepath, films);
+function save(filmsFilepath, filmData) {
+  db.write(filmsFilepath, filmData);
 };
 
 if (require.main === module) {
