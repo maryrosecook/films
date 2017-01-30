@@ -6,12 +6,13 @@ let _ = require("underscore");
 
 let youtube = require("../src/youtube");
 let listing = require("../src/listing");
-let loadListings = require("../src/load-listings");
 let presentedListings = require("../src/presented-listings");
 const imdbSearch = require("../src/imdb-search");
+const savedListingFilmNames =
+      require("../src/saved-listing-film-names");
 
 function scrapeTrailers() {
-  return filterUnfindableFilms(films())
+  return filterUnfindableFilms(savedListingFilmNames())
     .then(trailerUrls)
 };
 
@@ -47,13 +48,6 @@ function trailerUrls(films) {
 
 function createQuery(film) {
   return `${film} trailer`;
-};
-
-function films() {
-  return _.chain(loadListings(listing))
-    .pluck("film")
-    .uniq()
-    .value();
 };
 
 module.exports = scrapeTrailers;

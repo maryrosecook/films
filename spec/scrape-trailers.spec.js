@@ -9,8 +9,8 @@ describe("#scrapeTrailers", function() {
   it("saves scraped trailers to db", function(done) {
     let write = sinon.stub();
     let scrapeTrailers = proxyquire("../src/scrape-trailers", {
-      "../src/load-listings": sinon.stub()
-        .returns([{ film: "Margaret" }]),
+      "../src/saved-listing-film-names": sinon.stub()
+        .returns(["Margaret"]),
       "../src/youtube": sinon.stub()
         .resolves("https://www.youtube.com/watch?v=7YAiS-3EhMI"),
       "../src/imdb-search": sinon.stub().resolves(true),
@@ -35,10 +35,8 @@ describe("#scrapeTrailers", function() {
       .resolves("https://www.youtube.com/watch?v=7YAiS-3EhMI");
 
     let scrapeTrailers = proxyquire("../src/scrape-trailers", {
-      "../src/load-listings": sinon.stub().returns([
-        { film: "Heat" },
-        { film: "Margaret" }
-      ]),
+      "../src/saved-listing-film-names": sinon.stub()
+        .returns(["Heat", "Margaret"]),
       "../src/youtube": youtube,
       "../src/imdb-search": sinon.stub().resolves(true),
     });
@@ -57,8 +55,8 @@ describe("#scrapeTrailers", function() {
     let write = sinon.stub();
     let youtube = sinon.stub();
     let scrapeTrailers = proxyquire("../src/scrape-trailers", {
-      "../src/load-listings": sinon.stub()
-        .returns([{ film: "ntoehu oeunth oeunth oeunt" }]),
+      "../src/saved-listing-film-names": sinon.stub()
+        .returns(["oentuh onethu onteh untoehu"]),
       "../src/youtube": youtube,
       "../src/imdb-search": sinon.stub().resolves(undefined)
     });
