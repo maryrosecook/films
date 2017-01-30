@@ -7,7 +7,7 @@ let _ = require("underscore");
 let youtube = require("../src/youtube");
 let db = require("../src/db");
 let listing = require("../src/listing");
-let listings = require("../src/listings");
+let loadListings = require("../src/load-listings");
 let presentedListings = require("../src/presented-listings");
 const imdbSearch = require("../src/imdb-search");
 
@@ -71,7 +71,7 @@ function save(filepath, trailers) {
 };
 
 function films() {
-  return _.chain(listings(listing))
+  return _.chain(loadListings(listing))
     .pluck("film")
     .uniq()
     .value();

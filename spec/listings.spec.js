@@ -3,8 +3,6 @@
 let sinon = require("sinon");
 let proxyquire = require("proxyquire");
 
-let listings = require("../src/listings");
-
 describe("#listings", function() {
   it("returns array of listings", function() {
     let jsonObjects = [{
@@ -14,12 +12,12 @@ describe("#listings", function() {
       url: "http://richmix.org/listings"
     }];
 
-    let listings = proxyquire("../src/listings", {
+    let loadListings = proxyquire("../src/load-listings", {
       "../src/db": { read: sinon.stub().returns(jsonObjects) }
     });
 
     let listing = jasmine.createSpy("listing");
-    listings(listing);
+    loadListings(listing);
     expect(listing).toHaveBeenCalledWith(jsonObjects[0].dateTime,
                                          jsonObjects[0].film,
                                          jsonObjects[0].cinema,
