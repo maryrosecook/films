@@ -14,7 +14,7 @@ describe("scraping rio", function() {
   let requestPromise;
   let url = "https://riocinema.org.uk/RioCinema.dll/Home";
 
-  beforeEach(function() {
+  beforeAll(function() {
     let pageContent = fs.readFileSync(
       path.join(__dirname, "./pages/rio.html"),
       "utf8");

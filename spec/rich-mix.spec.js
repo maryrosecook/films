@@ -12,8 +12,8 @@ let stringRequestPromise = require("./string-request-promise");
 describe("scraping rich mix", function() {
   describe("#listings", function() {
     let requestPromise;
-    let url =
-    beforeEach(function() {
+
+    beforeAll(function() {
       let pageContent = fs.readFileSync(
         path.join(__dirname, "./pages/richmix.org.uk.html"),
         "utf8");

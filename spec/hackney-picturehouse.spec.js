@@ -12,12 +12,13 @@ let stringRequestPromise = require("./string-request-promise");
 
 describe("scraping hackney picturehouse", function() {
   let requestPromise;
-  let url = "https://www.picturehouses.com/cinema/Hackney_Picturehouse/Whats_On";
+  let url = "https://www.picturehouses.com/cinema/Hackney_Picturehouse/Whats_On"
 
-  beforeEach(function() {
+  beforeAll(() => {
     let pageContent = fs.readFileSync(
       path.join(__dirname, "./pages/hackney-picturehouse.html"),
       "utf8");
+
     requestPromise = hackneyPicturehouse.listings(
       stringRequestPromise(pageContent), listing);
   });

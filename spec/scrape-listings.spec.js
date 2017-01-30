@@ -4,21 +4,20 @@ let fs = require("fs-extra");
 let path = require("path");
 
 let scrapeListings = require("../src/scrape-listings.js");
-let richMix = require("../src/listing-sources/rich-mix.js");
+let rio = require("../src/listing-sources/rio.js");
 const stringRequestPromise = require("./string-request-promise");
-
 
 describe("#scrapeListings", function() {
   it("returns listings for two cinemas", function(done) {
-    var cinemas = [richMix, richMix];
+    var cinemas = [rio, rio];
 
     var pageHtml = fs.readFileSync(
-      path.join(__dirname, "./pages/richmix.org.uk.html"), "utf8");
+      path.join(__dirname, "./pages/rio.html"), "utf8");
     var requestPromise = stringRequestPromise(pageHtml);
 
     scrapeListings(cinemas, requestPromise)
       .then(function(listings) {
-        expect(listings.length).toEqual(932);
+        expect(listings.length).toEqual(36);
         done();
       });
   });
