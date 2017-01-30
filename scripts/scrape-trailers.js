@@ -9,19 +9,38 @@ let db = require("../src/db");
 let listing = require("../src/listing");
 let listings = require("../src/listings");
 let presentedListings = require("../src/presented-listings");
+const imdbSearch = require("../src/imdb-search");
 
 const TRAILERS_FILEPATH = path.join(__dirname,
                                     "../data",
                                     "trailers.json");
 
 function scrapeTrailers() {
-  return trailerUrls(films())
-    .then(reportAndSave);
+  return filterUnfindableFilms(films())
+    .then((films) => {
+      return trailerUrls(films)
+        .then(reportAndSave);
+    });
 };
 
 function reportAndSave(trailerUrls) {
   report(trailerUrls);
   save(TRAILERS_FILEPATH, trailerUrls);
+};
+
+function filterUnfindableFilms(films) {
+  return Promise.all(films.map(imdbSearch))
+    .then((searches) => {
+      return _.zip(films, searches)
+        .filter((filmAndSearch) => {
+          let search = filmAndSearch[1];
+          return search !== undefined;
+        })
+        .map((filmAndSearch) => {
+          let film = filmAndSearch[0];
+          return film;
+        });
+    });
 };
 
 function resolveDespiteFailure(promise) {
