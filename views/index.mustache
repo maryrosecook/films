@@ -20,7 +20,9 @@
             {{/listings}}
           </div>
 
-          <div><a href="{{trailer}}">Trailer</a></div>
+          {{#trailer}} {{! making block: no render if no trailer}}
+            <div><a href="{{trailer}}">Trailer</a></div>
+          {{/trailer}}
         </div>
         <br/>
       {{/films}}
