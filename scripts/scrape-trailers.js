@@ -25,11 +25,7 @@ function reportAndSave(trailerUrls) {
 };
 
 function resolveDespiteFailure(promise) {
-  return promise
-    .then((result) => {
-      return result;
-    })
-    .catch(() => { });
+  return promise.catch(() => { });
 };
 
 function trailerUrls(films) {
