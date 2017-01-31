@@ -1,0 +1,18 @@
+{{#imdburl}}
+  <span class="show-film-info" tabindex="0">
+    &nbsp;&nbsp;>>>
+
+    <div class="film-info">
+      <div>{{plot}} Director: {{director}}</div>
+
+      <div>
+        {{#metascore}}{{metascore}}%{{/metascore}}
+          {{#rating}}{{rating}}/10{{/rating}}
+      </div>
+
+      {{#trailer}}
+        <div><a href="{{trailer}}">Trailer</a></div>
+      {{/trailer}}
+    </div>
+  </span>
+{{/imdburl}}

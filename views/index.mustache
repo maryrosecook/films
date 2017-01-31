@@ -15,37 +15,9 @@
             <a href="{{imdburl}}">{{film}}</a>
           </h3>
 
-          {{#imdburl}}
-            <span class="show-film-info" tabindex="0">
-              &nbsp;&nbsp;>>>
+          {{> filmInfo}}
 
-              <div class="film-info">
-                <div>{{plot}} Director: {{director}}</div>
-
-                <div>
-                  {{#metascore}}{{metascore}}%{{/metascore}}
-                    {{#rating}}{{rating}}/10{{/rating}}
-                </div>
-
-                {{#trailer}}
-                  <div><a href="{{trailer}}">Trailer</a></div>
-                {{/trailer}}
-              </div>
-            </span>
-          {{/imdburl}}
-
-          <div>
-            {{#cinemas}}
-              <div>
-                {{#listings}}
-                  <span class="{{partOfDay}}">
-                    <a href="{{url}}">{{time}}</a>
-                  </span>
-                {{/listings}}
-                &nbsp;({{cinema}})
-              </div>
-            {{/cinemas}}
-          </div>
+          {{> listings}}
         </div>
         <br/>
       {{/films}}

@@ -14,13 +14,21 @@ const LISTINGS_PATH = path.relative(
   process.cwd(),
   path.join(__dirname, "../data", "listings.json"));
 
-const indexTemplate = template("index.mustache");
+const indexTemplate = loadTemplate(templatePath("index.mustache"));
+const filmInfoPartial =
+      loadTemplate(templatePath("film-info.mustache"));
+const listingsPartial =
+      loadTemplate(templatePath("listings.mustache"));
+
 
 function indexHandler(request, response) {
   moment.tz.setDefault("Europe/London");
   response.send(mustache.render(indexTemplate, {
     dates: presentedListings.prepare(
       loadListings())
+  }, {
+    filmInfo: filmInfoPartial,
+    listings: listingsPartial
   }));
 };
 
@@ -28,11 +36,15 @@ function listingsHandler(request, response) {
   response.json(db.read(LISTINGS_PATH));
 };
 
-function template(templateFilename) {
-  return fs.readFileSync(path.relative(
+function templatePath(templateFilename) {
+  return path.relative(
     process.cwd(),
     path.join(__dirname, "../views/", templateFilename)
-  ), "utf8");
+  );
+};
+
+function loadTemplate(templateFilepath) {
+  return fs.readFileSync(templateFilepath, "utf8");
 };
 
 module.exports = {
