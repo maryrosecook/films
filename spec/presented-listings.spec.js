@@ -10,9 +10,7 @@ describe("presentedListings", function() {
       it("groups by date and then film", function() {
         let presentedListings = proxyquire(
           "../src/presented-listings", {
-            "./load-trailers": sinon.stub().returns({
-              Margaret: "https://www.youtube.com/watch?v=7YAiS-3E"
-            })
+            "./load-film-data": sinon.stub().returns({})
           });
 
         let date = moment();
@@ -29,7 +27,6 @@ describe("presentedListings", function() {
           date: date.format("dddd Do MMMM"),
           films: [{
             film: "Margaret",
-            trailer: "https://www.youtube.com/watch?v=7YAiS-3E",
             cinemas: [{
               cinema: "Rich Mix",
               listings: [{
@@ -45,7 +42,7 @@ describe("presentedListings", function() {
       it("groups films by date", function() {
         let presentedListings = proxyquire(
           "../src/presented-listings", {
-            "./load-trailers": sinon.stub().returns({})
+            "./load-film-data": sinon.stub().returns({})
           });
 
         let date1 = moment();
@@ -120,13 +117,15 @@ describe("presentedListings", function() {
 
     describe("trailers", function() {
       it("adds trailer when one is known", function() {
-        let trailerData = {
-          Margaret: "https://www.youtube.com/watch?v=jx52F4iLTL8"
+        let filmData = {
+          Margaret: {
+            trailer: "https://www.youtube.com/watch?v=jx52F4iLTL8"
+          }
         };
 
         let presentedListings =
             proxyquire("../src/presented-listings", {
-              "./load-trailers": sinon.stub().returns(trailerData)
+              "./load-film-data": sinon.stub().returns(filmData)
             });
 
         let dates = presentedListings.prepare([
@@ -137,7 +136,7 @@ describe("presentedListings", function() {
 
         expect(filmListingsBlock.film).toEqual("Margaret");
         expect(filmListingsBlock.trailer)
-          .toEqual(trailerData["Margaret"]);
+          .toEqual(filmData["Margaret"].trailer);
       });
 
       it("doesn't add trailer when one not known", function() {
@@ -152,10 +151,53 @@ describe("presentedListings", function() {
           { film: "Margaret", dateTime: moment() }
         ]);
 
-        let filmListingsBlock = dates[0].films[0]
+        let filmListingsBlock = dates[0].films[0];
 
         expect(filmListingsBlock.film).toEqual("Margaret");
         expect(filmListingsBlock.trailer).toBeUndefined();
+      });
+    });
+
+    describe("imdb film data", function() {
+      it("adds data", function() {
+        let imdbFilmData = {
+          "Heat": {
+            title: 'Heat',
+            year: 1995,
+            director: 'Michael Mann',
+            writer: 'Michael Mann',
+            actors: 'Al Pacino, Robert De Niro',
+            plot: 'Neil...',
+            metascore: '76',
+            rating: '8.2',
+            imdburl: 'https://www.imdb.com/title/tt0113277',
+          }
+        };
+
+        let presentedListings =
+            proxyquire("../src/presented-listings", {
+              "./load-film-data": sinon.stub().returns(imdbFilmData)
+            });
+
+        let dates = presentedListings.prepare([
+          { film: "Heat", dateTime: moment() }
+        ]);
+
+        let filmListingsBlock = dates[0].films[0]
+
+        expect(filmListingsBlock.film).toEqual("Heat");
+        expect(filmListingsBlock.director)
+          .toEqual(imdbFilmData["Heat"].director);
+        expect(filmListingsBlock.actors)
+          .toEqual(imdbFilmData["Heat"].actors);
+        expect(filmListingsBlock.plot)
+          .toEqual(imdbFilmData["Heat"].plot);
+        expect(filmListingsBlock.metascore)
+          .toEqual(imdbFilmData["Heat"].metascore);
+        expect(filmListingsBlock.rating)
+          .toEqual(imdbFilmData["Heat"].rating);
+        expect(filmListingsBlock.imdburl)
+          .toEqual(imdbFilmData["Heat"].imdburl);
       });
     });
   });

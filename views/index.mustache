@@ -10,7 +10,12 @@
       <h2>{{date}}</h2>
       {{#films}}
         <div>
-          <h3>{{film}}</h3>
+          <h3><a href="{{imdburl}}">{{film}}</a></h3>
+          <div>{{plot}} Director: {{director}}</div>
+          <div>
+            {{#metascore}}{{metascore}}%{{/metascore}}
+            {{#rating}}{{rating}}/10{{/rating}}
+          </div>
 
           <div>
             {{#cinemas}}

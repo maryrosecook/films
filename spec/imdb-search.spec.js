@@ -10,7 +10,6 @@ describe("#imdb-search", function() {
     let filmData = {
       title: 'Heat',
       year: 1995,
-      rated: 'R',
       director: 'Michael Mann',
       writer: 'Michael Mann',
       actors: 'Al Pacino, Robert De Niro',

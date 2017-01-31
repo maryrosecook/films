@@ -28,7 +28,9 @@ function mergeData(trailers, filmData) {
   let films = _.union(_.keys(trailers), _.keys(filmData));
 
   return films.reduce((mergedData, film) => {
-    mergedData[film] = _.extend({}, trailers[film], filmData[film]);
+    mergedData[film] = _.extend({},
+                                { trailer: trailers[film] },
+                                filmData[film]);
     return mergedData;
   }, {});
 };

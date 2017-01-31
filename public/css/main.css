@@ -1,9 +1,5 @@
-.day {
-  background-color: #ff8;
-}
-
-.night {
-  background-color: #ccf;
+body {
+  max-width: 700px;
 }
 
 h2 {
@@ -14,6 +10,15 @@ h3 {
   padding: 0;
   margin: 0;
   font-size: 1.1em;
+  display: inline;
 }
 
 a { color: black; }
+
+.day {
+  background-color: #ff8;
+}
+
+.night {
+  background-color: #ccf;
+}

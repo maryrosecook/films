@@ -3,7 +3,7 @@
 let _ = require("underscore");
 let moment = require("moment-timezone");
 
-let loadTrailers = require("./load-trailers");
+let loadFilmData = require("./load-film-data");
 
 function prepare(listings) {
   return groupByDateAndFilm(todayAndAfter(listings));
@@ -49,7 +49,7 @@ function prepareFilms(listings) {
     .groupBy(_.property("film"))
     .map(argumentsObject(["listings", "film"]))
     .map(listingsByCinema)
-    .map(addTrailer)
+    .map(addFilmData)
     .sort((a, b) => {
       return alphabeticalSortOrder(a.film, b.film);
     })
@@ -67,11 +67,10 @@ function listingsByCinema(filmAndListings) {
   return filmAndListings;
 };
 
-function addTrailer(filmListingsBlock) {
-  let trailerData = loadTrailers();
-  if (filmListingsBlock.film in trailerData) {
-    filmListingsBlock.trailer =
-      trailerData[filmListingsBlock.film];
+function addFilmData(filmListingsBlock) {
+  let filmData = loadFilmData();
+  if (filmListingsBlock.film in filmData) {
+    _.extend(filmListingsBlock, filmData[filmListingsBlock.film]);
   }
 
   return filmListingsBlock;

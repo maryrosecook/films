@@ -13,7 +13,7 @@ describe("#scrapeFilms", function() {
     };
 
     let imdbFilmData = {
-      "Heat": {
+      Heat: {
         title: "Heat",
         rating: "8.2",
         metascore: "76",
@@ -33,7 +33,11 @@ describe("#scrapeFilms", function() {
     scrapeAndSaveFilmData()
       .then(function() {
         expect(write.firstCall.args[1])
-          .toEqual(_.extend(trailers, imdbFilmData));
+          .toEqual({
+            Heat: _.extend({},
+                           imdbFilmData["Heat"],
+                           { trailer: trailers["Heat"] })
+          })
         done();
       });
   });
