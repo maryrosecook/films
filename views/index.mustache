@@ -10,18 +10,26 @@
       <h2>{{date}}</h2>
       {{#films}}
         <div>
-          <h3><a href="{{imdburl}}">{{film}}</a></h3>
+          <h3>
+            <a href="{{imdburl}}">{{film}}</a>
+          </h3>
+          <span class="show-film-info" tabindex="0">
+            &nbsp;&nbsp;>
+          </span>
 
-          <div>{{plot}} Director: {{director}}</div>
 
-          <div>
-            {{#metascore}}{{metascore}}%{{/metascore}}
-            {{#rating}}{{rating}}/10{{/rating}}
+          <div class="film-info">
+            <div>{{plot}} Director: {{director}}</div>
+
+            <div>
+              {{#metascore}}{{metascore}}%{{/metascore}}
+                {{#rating}}{{rating}}/10{{/rating}}
+            </div>
+
+            {{#trailer}}
+              <div><a href="{{trailer}}">Trailer</a></div>
+            {{/trailer}}
           </div>
-
-          {{#trailer}} {{! making block so no render if no trailer}}
-            <div><a href="{{trailer}}">Trailer</a></div>
-          {{/trailer}}
 
           <div>
             {{#cinemas}}

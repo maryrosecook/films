@@ -15,6 +15,22 @@ h3 {
 
 a { color: black; }
 
+.show-film-info:focus + .film-info {
+  opacity: 1;
+  height: 100%;
+  transition-delay: 0s;
+}
+
+.show-film-info:focus {
+  outline: 0;
+}
+
+.film-info {
+  opacity: 0;
+  height: 0;
+  transition-delay: 360000s;
+}
+
 .day {
   background-color: #ff8;
 }
