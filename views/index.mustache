@@ -3,6 +3,7 @@
   <head>
     <title>Films</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src="/js/index.js"></script>
     <meta name = "viewport" content = "width = device-width">
   </head>
   <body>
@@ -14,22 +15,21 @@
             <a href="{{imdburl}}">{{film}}</a>
           </h3>
           <span class="show-film-info" tabindex="0">
-            &nbsp;&nbsp;>
-          </span>
+            &nbsp;&nbsp;>>>
 
+            <div class="film-info">
+              <div>{{plot}} Director: {{director}}</div>
 
-          <div class="film-info">
-            <div>{{plot}} Director: {{director}}</div>
+              <div>
+                {{#metascore}}{{metascore}}%{{/metascore}}
+                  {{#rating}}{{rating}}/10{{/rating}}
+              </div>
 
-            <div>
-              {{#metascore}}{{metascore}}%{{/metascore}}
-                {{#rating}}{{rating}}/10{{/rating}}
+              {{#trailer}}
+                <div><a href="{{trailer}}">Trailer</a></div>
+              {{/trailer}}
             </div>
-
-            {{#trailer}}
-              <div><a href="{{trailer}}">Trailer</a></div>
-            {{/trailer}}
-          </div>
+          </span>
 
           <div>
             {{#cinemas}}
