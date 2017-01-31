@@ -6,7 +6,7 @@ let proxyquire = require("proxyquire");
 const listing = require("../src/listing");
 
 describe("#scrapeImdbFilmData", function() {
-  fit("scrapes data for all film names", function(done) {
+  it("scrapes data for all film names", function(done) {
     let scrapeImdbFilmData =
         proxyquire("../src/scrape-imdb-film-data", {
           "../src/saved-listing-film-names": sinon.stub().returns([
@@ -22,10 +22,11 @@ describe("#scrapeImdbFilmData", function() {
 
     scrapeImdbFilmData()
       .then((filmData) => {
-        expect(filmData[0].title).toEqual("Heat");
-        expect(filmData[0].rating).toEqual("8.2");
-        expect(filmData[0].metascore).toEqual("76");
-        expect(filmData[0].imdburl)
+        let heat = filmData["Heat"];
+        expect(heat.title).toEqual("Heat");
+        expect(heat.rating).toEqual("8.2");
+        expect(heat.metascore).toEqual("76");
+        expect(heat.imdburl)
           .toEqual("https://www.imdb.com/title/tt0113277");
 
         done();

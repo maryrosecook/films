@@ -9,7 +9,11 @@ const savedListingFilmNames =
       require("../src/saved-listing-film-names");
 
 function scrapeImdbFilmData() {
-  return Promise.all(savedListingFilmNames().map(imdbSearch));
+  let films = savedListingFilmNames();
+  return Promise.all(films.map(imdbSearch))
+    .then((searches) => {
+      return _.object(films, searches);
+    });
 };
 
 module.exports = scrapeImdbFilmData;
