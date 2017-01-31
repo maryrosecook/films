@@ -11,11 +11,17 @@
       {{#films}}
         <div>
           <h3><a href="{{imdburl}}">{{film}}</a></h3>
+
           <div>{{plot}} Director: {{director}}</div>
+
           <div>
             {{#metascore}}{{metascore}}%{{/metascore}}
             {{#rating}}{{rating}}/10{{/rating}}
           </div>
+
+          {{#trailer}} {{! making block so no render if no trailer}}
+            <div><a href="{{trailer}}">Trailer</a></div>
+          {{/trailer}}
 
           <div>
             {{#cinemas}}
@@ -29,10 +35,6 @@
               </div>
             {{/cinemas}}
           </div>
-
-          {{#trailer}} {{! making block so no render if no trailer}}
-            <div><a href="{{trailer}}">Trailer</a></div>
-          {{/trailer}}
         </div>
         <br/>
       {{/films}}
