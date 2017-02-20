@@ -8,7 +8,7 @@
     "scrape": "node --harmony scripts/scrape-and-save-listings.js && node --harmony scripts/scrape-and-save-film-data.js",
     "start": "nodemon -q -e js,mustache -x 'node --harmony src/app.js'",
     "deploy": "git push origin master && ssh do 'bash -s' < scripts/deploy.sh",
-    "push-data": "scp -r ~/code/films/data/* do:~/node-sites/films/data"
+    "push-films": "npm run scrape && scp -r ~/code/films/data/* do:~/node-sites/films/data"
   },
   "author": "",
   "license": "ISC",
