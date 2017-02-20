@@ -8,7 +8,7 @@ function youtube(query) {
     authenticatedInstance()
       .search(query, 1, function(err, response) {
         if (err || responseSearchResults(response).length === 0) {
-          return reject("Couldn't get trailer");
+          return reject("Couldn't get video");
         }
 
         resolve(youtubeUrlFromVideoId(
