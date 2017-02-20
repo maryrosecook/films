@@ -5,8 +5,6 @@ let path = require("path");
 let _ = require("underscore");
 
 let youtube = require("../src/youtube");
-let listing = require("../src/listing");
-let presentedListings = require("../src/presented-listings");
 const imdbSearch = require("../src/imdb-search");
 const savedListingFilmNames =
       require("../src/saved-listing-film-names");
