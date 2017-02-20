@@ -4,7 +4,7 @@ let path = require("path");
 
 let _ = require("underscore");
 
-let youtube = require("../src/youtube");
+let youtubeSearch = require("../src/youtube-search");
 const imdbSearch = require("../src/imdb-search");
 const savedListingFilmNames =
       require("../src/saved-listing-film-names");
@@ -36,7 +36,7 @@ function resolveDespiteFailure(promise) {
 function trailerUrls(films) {
   return Promise.all(
     films
-      .map(_.compose(resolveDespiteFailure, youtube, createQuery))
+      .map(_.compose(resolveDespiteFailure, youtubeSearch, createQuery))
   ).then((trailerUrls) => {
     return _.pick(_.object(films, trailerUrls), (value) => {
       return value;

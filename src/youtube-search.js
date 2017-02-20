@@ -3,7 +3,7 @@
 require('dotenv').config();
 let YouTube = require('youtube-node');
 
-function youtube(query) {
+function youtubeSearch(query) {
   return new Promise(function(resolve, reject) {
     authenticatedInstance()
       .search(query, 1, function(err, response) {
@@ -35,4 +35,4 @@ function authenticatedInstance() {
   return youTube;
 };
 
-module.exports = youtube;
+module.exports = youtubeSearch;

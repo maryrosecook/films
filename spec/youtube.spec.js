@@ -8,7 +8,7 @@ let proxyquire = require("proxyquire").noPreserveCache();
 describe("#youtube", function() {
   it("sets key on youtube instance", function(done) {
     let setKey = sinon.stub();
-    let youtube = proxyquire("../src/youtube", {
+    let youtubeSearch = proxyquire("../src/youtube-search", {
       "youtube-node": sinon.stub().returns({
         setKey: setKey,
         search: (_1, _2, cb) => {
@@ -19,7 +19,7 @@ describe("#youtube", function() {
       })
     });
 
-    youtube().catch(() => {
+    youtubeSearch().catch(() => {
       expect(setKey.firstCall.args[0].length > 0).toEqual(true)
       done();
     });
@@ -28,7 +28,7 @@ describe("#youtube", function() {
   it("gives single url for a query", function(done) {
     let response = { items: [{ id: { videoId: '2GfZl4kuVNI' } }] };
 
-    let youtube = proxyquire("../src/youtube", {
+    let youtubeSearch = proxyquire("../src/youtube-search", {
       "youtube-node": sinon.stub().returns({
         setKey: sinon.stub(),
         search: (query, maxResults, cb) => {
@@ -40,7 +40,7 @@ describe("#youtube", function() {
       })
     });
 
-    youtube("heat trailer")
+    youtubeSearch("heat trailer")
       .then((result) => {
         expect(result)
           .toEqual("https://www.youtube.com/embed/2GfZl4kuVNI");
