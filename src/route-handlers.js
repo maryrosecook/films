@@ -22,7 +22,7 @@ const listingsPartial =
 
 
 function indexHandler(request, response) {
-  moment.tz.setDefault("Europe/London");
+  moment.tz.setDefault("UTC");
   response.send(mustache.render(indexTemplate, {
     dates: presentedListings.prepare(
       loadListings())

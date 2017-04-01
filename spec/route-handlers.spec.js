@@ -54,7 +54,7 @@ describe("routeHandlers", function() {
       });
 
       routeHandlers.index(requestMock, responseMock);
-      expect(setDefault.firstCall.args[0]).toEqual("Europe/London");
+      expect(setDefault.firstCall.args[0]).toEqual("UTC");
     });
 
     it("responds with something (anything at all)", function() {
