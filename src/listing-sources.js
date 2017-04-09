@@ -10,8 +10,8 @@ const LISTING_SOURCE_FILENAMES = [
   "hackney-picturehouse.js",
   "rich-mix.js",
   "rio.js",
-  "barbican.js",
-  "bfi-southbank.js"
+  "barbican-britinfo.js",
+  "bfi-britinfo.js",
 ];
 
 function listingSources() {
