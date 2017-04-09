@@ -12,6 +12,8 @@ const LISTING_SOURCE_FILENAMES = [
   "rio.js",
   "barbican-britinfo.js",
   "bfi-britinfo.js",
+  "curzon-soho-britinfo.js",
+  "curzon-bloomsbury-britinfo.js"
 ];
 
 function listingSources() {
