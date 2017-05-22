@@ -19,12 +19,15 @@ describe("#imdb-search", function() {
       imdburl: 'https://www.imdb.com/title/tt0113277'
     };
 
+    let get = sinon.stub().resolves(filmData);
     let imdbSearch = proxyquire("../src/imdb-search", {
-      "imdb-api": { get: sinon.stub().resolves(filmData) }
+      "imdb-api": { get: get }
     });
 
     imdbSearch("heat").then((data) => {
       expect(data).toEqual(filmData);
+      expect(get.getCall(0).args[0]).toEqual("heat");
+      expect(get.getCall(0).args[1].apiKey).toBeDefined();
       done();
     });
   });

@@ -24,7 +24,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
     "fs-extra": "^1.0.0",
-    "imdb-api": "^2.2.1",
+    "imdb-api": "^3.0.0",
     "moment-timezone": "^0.5.11",
     "mustache": "^2.3.0",
     "proxyquire": "^1.7.10",
