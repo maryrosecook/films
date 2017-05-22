@@ -19,8 +19,8 @@ function scrapeAndSaveFilmData() {
       let filmData = data[1];
       let mergedData = mergeData(trailers, filmData);
 
-      report(mergedData);
       save(FILMS_FILEPATH, mergedData);
+      report(mergedData);
     });
 };
 
@@ -36,7 +36,7 @@ function mergeData(trailers, filmData) {
 };
 
 function report(filmData) {
-  console.log(`Saving ${Object.keys(filmData).length} films`);
+  console.log(`Saved ${Object.keys(filmData).length} films`);
 };
 
 function save(filmsFilepath, filmData) {
