@@ -13,7 +13,8 @@ const LISTING_SOURCE_FILENAMES = [
   "barbican-britinfo.js",
   "bfi-britinfo.js",
   "curzon-soho-britinfo.js",
-  "curzon-bloomsbury-britinfo.js"
+  "curzon-bloomsbury-britinfo.js",
+  "electric-cinema-britinfo.js"
 ];
 
 function listingSources() {
