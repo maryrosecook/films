@@ -18,7 +18,7 @@ describe("scraping all britinfo cinemas", function() {
 
     cinemaListings(requestPromise, listing)
       .then((results) => {
-        expect(results.length).toEqual(5);
+        expect(results.length).toEqual(6);
         done();
       });
   });
@@ -78,6 +78,15 @@ describe("scraping all britinfo cinemas", function() {
           listing,
           "http://www.britinfo.net/cinema/cinema-listings-1004176.htm",
           "Electric Cinema"]);
+    });
+
+    it("scrapes Curzon Aldgate", function() {
+      expect(britinfo.listings.getCall(5).args)
+        .toEqual([
+          requestPromise,
+          listing,
+          "http://www.britinfo.net/cinema/cinema-listings-1212336.htm",
+          "Curzon Aldgate"]);
     });
   });
 });

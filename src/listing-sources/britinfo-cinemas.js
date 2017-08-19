@@ -12,7 +12,9 @@ let cinemas = [
   { url: "http://www.britinfo.net/cinema/cinema-listings-1003905.htm",
     name: "Curzon Soho" },
   { url: "http://www.britinfo.net/cinema/cinema-listings-1004176.htm",
-    name: "Electric Cinema" }
+    name: "Electric Cinema" },
+  { url: "http://www.britinfo.net/cinema/cinema-listings-1212336.htm",
+    name: "Curzon Aldgate" }
 ];
 
 exports.listings = function(requestPromise, listing) {
