@@ -14,7 +14,11 @@ let cinemas = [
   { url: "http://www.britinfo.net/cinema/cinema-listings-1004176.htm",
     name: "Electric Cinema" },
   { url: "http://www.britinfo.net/cinema/cinema-listings-1212336.htm",
-    name: "Curzon Aldgate" }
+    name: "Curzon Aldgate" },
+  { url: "http://www.britinfo.net/cinema/cinema-listings-1004107.htm",
+    name: "Genesis" },
+  { url: "http://www.britinfo.net/cinema/cinema-listings-1000171.htm",
+    name: "Vue Islington" }
 ];
 
 exports.listings = function(requestPromise, listing) {

@@ -84,5 +84,23 @@ describe("scraping all britinfo cinemas", function() {
           "http://www.britinfo.net/cinema/cinema-listings-1212336.htm",
           "Curzon Aldgate"]);
     });
+
+    it("scrapes Genesis", function() {
+      expect(britinfo.listings.getCall(6).args)
+        .toEqual([
+          requestPromise,
+          listing,
+          "http://www.britinfo.net/cinema/cinema-listings-1004107.htm",
+          "Genesis"]);
+    });
+
+    it("scrapes Vue Islington", function() {
+      expect(britinfo.listings.getCall(7).args)
+        .toEqual([
+          requestPromise,
+          listing,
+          "http://www.britinfo.net/cinema/cinema-listings-1000171.htm",
+          "Vue Islington"]);
+    });
   });
 });
