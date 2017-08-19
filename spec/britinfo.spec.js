@@ -6,7 +6,7 @@ let path = require("path");
 let _ = require("underscore");
 
 let britinfo =
-    require("../src/listing-sources/britinfo");
+    require("../src/britinfo");
 let listing = require("../src/listing");
 let stringRequestPromise = require("./string-request-promise");
 
