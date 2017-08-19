@@ -7,7 +7,7 @@ let moment = require("moment");
 let _ = require("underscore");
 
 let googlePageListings =
-    require("../src/listing-sources/google-page-listings");
+    require("../src/google-page-listings");
 let listing = require("../src/listing");
 
 describe("#googlePageListings", function() {

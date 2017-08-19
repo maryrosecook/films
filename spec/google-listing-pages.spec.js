@@ -7,7 +7,7 @@ let _ = require("underscore");
 let moment = require("moment");
 
 let googleListingPages =
-    require("../src/listing-sources/google-listing-pages");
+    require("../src/google-listing-pages");
 let stringRequestPromise = require("./string-request-promise");
 
 describe("#googleListingPageUrls", function() {

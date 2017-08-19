@@ -3,7 +3,7 @@
 let cheerio = require("cheerio");
 let moment = require("moment-timezone");
 
-let listing = require("../listing");
+let listing = require("./listing");
 
 function googlePageListings(pageContent, date, cinema) {
   var $ = cheerio.load(pageContent);

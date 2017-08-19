@@ -9,7 +9,7 @@ let path = require("path");
 let _ = require("underscore");
 
 let googleListings =
-    require("../src/listing-sources/google-listings");
+    require("../src/google-listings");
 let listing = require("../src/listing");
 
 describe("scraping listings for the rio", function() {
