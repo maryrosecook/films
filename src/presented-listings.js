@@ -3,10 +3,8 @@
 let _ = require("underscore");
 let moment = require("moment-timezone");
 
-let loadFilmData = require("./load-film-data");
-
-function prepare(listings) {
-  return groupByDateAndFilm(todayAndAfter(listings));
+function prepare(listings, filmData) {
+  return groupByDateAndFilm(todayAndAfter(listings), filmData);
 };
 
 function todayAndAfter(listings) {
@@ -15,13 +13,13 @@ function todayAndAfter(listings) {
   });
 };
 
-function groupByDateAndFilm(listings) {
+function groupByDateAndFilm(listings, filmData) {
   return _.chain(listings)
     .groupBy((listing) => {
       return listing.dateTime.format("YYYY-MM-DD");
     })
     .map((dateListings, date) => {
-      return { date, films: prepareFilms(dateListings) };
+      return { date, films: prepareFilms(dateListings, filmData) };
     })
     .sortBy((dateGroup1, dateGroup2) => {
       return moment(dateGroup1.date).diff(moment(dateGroup2.date));
@@ -41,7 +39,7 @@ function argumentsObject(names) {
   };
 };
 
-function prepareFilms(listings) {
+function prepareFilms(listings, filmData) {
   return _.chain(listings)
     .sort((listing1, listing2) => {
       return listing1.dateTime.diff(listing2.dateTime);
@@ -49,7 +47,7 @@ function prepareFilms(listings) {
     .groupBy(_.property("film"))
     .map(argumentsObject(["listings", "film"]))
     .map(listingsByCinema)
-    .map(addFilmData)
+    .map(_.partial(addFilmData, filmData))
     .sort((a, b) => {
       return alphabeticalSortOrder(a.film, b.film);
     })
@@ -67,8 +65,7 @@ function listingsByCinema(filmAndListings) {
   return filmAndListings;
 };
 
-function addFilmData(filmListingsBlock) {
-  let filmData = loadFilmData();
+function addFilmData(filmData, filmListingsBlock) {
   if (filmListingsBlock.film in filmData) {
     _.extend(filmListingsBlock, filmData[filmListingsBlock.film]);
   }

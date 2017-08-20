@@ -3,16 +3,12 @@
 let proxyquire = require("proxyquire");
 let sinon = require("sinon");
 let moment = require("moment");
+const presentedListings = require("../src/presented-listings");
 
 describe("presentedListings", function() {
   describe("#prepare", function() {
     describe("grouping", function() {
       it("groups by date and then film", function() {
-        let presentedListings = proxyquire(
-          "../src/presented-listings", {
-            "./load-film-data": sinon.stub().returns({})
-          });
-
         let date = moment();
         let listingObjects = [{
           dateTime: date,
@@ -21,7 +17,7 @@ describe("presentedListings", function() {
         }];
 
         let dates = presentedListings
-            .prepare(listingObjects);
+            .prepare(listingObjects, {});
 
         expect(dates).toEqual([{
           date: date.format("dddd Do MMMM"),
@@ -40,11 +36,6 @@ describe("presentedListings", function() {
       });
 
       it("groups films by date", function() {
-        let presentedListings = proxyquire(
-          "../src/presented-listings", {
-            "./load-film-data": sinon.stub().returns({})
-          });
-
         let date1 = moment();
         let date2 = moment().add(1, "day");
         let listingObjects = [{
@@ -58,7 +49,7 @@ describe("presentedListings", function() {
         }];
 
         let dates = presentedListings
-            .prepare(listingObjects);
+            .prepare(listingObjects, {});
 
         expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
         expect(dates[0].films[0].film).toEqual("Margaret");
@@ -70,11 +61,6 @@ describe("presentedListings", function() {
 
     describe("sorting", function() {
       it("sorts date groups chronologically", function() {
-        let presentedListings = proxyquire(
-          "../src/presented-listings", {
-            "./trailers": sinon.stub().returns({})
-          });
-
         let date1 = moment();
         let date2 = moment().add(1, "day");
         let listingObjects = [
@@ -83,7 +69,7 @@ describe("presentedListings", function() {
         ];
 
         let dates = presentedListings
-            .prepare(listingObjects);
+            .prepare(listingObjects, {});
 
         expect(dates[0].date).toEqual(date1.format("dddd Do MMMM"));
         expect(dates[1].date).toEqual(date2.format("dddd Do MMMM"));
@@ -92,11 +78,6 @@ describe("presentedListings", function() {
 
     describe("filtering listings", function() {
       it("omits listings before today", function() {
-        let presentedListings = proxyquire(
-          "../src/presented-listings", {
-            "./trailers": sinon.stub().returns({})
-          });
-
         let yesterday = moment().subtract(1, "day");
         let today = moment();
         let tomorrow = moment().add(1, "day");
@@ -106,7 +87,7 @@ describe("presentedListings", function() {
           { dateTime: tomorrow, film: "Heat", cinema: "" }
         ];
 
-        let dates = presentedListings.prepare(listingObjects);
+        let dates = presentedListings.prepare(listingObjects, {});
 
         expect(dates[0].date)
           .toEqual(today.format("dddd Do MMMM"));
@@ -123,14 +104,9 @@ describe("presentedListings", function() {
           }
         };
 
-        let presentedListings =
-            proxyquire("../src/presented-listings", {
-              "./load-film-data": sinon.stub().returns(filmData)
-            });
-
         let dates = presentedListings.prepare([
           { film: "Margaret", dateTime: moment() }
-        ]);
+        ], filmData);
 
         let filmListingsBlock = dates[0].films[0]
 
@@ -142,14 +118,9 @@ describe("presentedListings", function() {
       it("doesn't add trailer when one not known", function() {
         let trailerData = {};
 
-        let presentedListings =
-            proxyquire("../src/presented-listings", {
-              "./trailers": sinon.stub().returns(trailerData)
-            });
-
         let dates = presentedListings.prepare([
           { film: "Margaret", dateTime: moment() }
-        ]);
+        ], trailerData);
 
         let filmListingsBlock = dates[0].films[0];
 
@@ -174,14 +145,9 @@ describe("presentedListings", function() {
           }
         };
 
-        let presentedListings =
-            proxyquire("../src/presented-listings", {
-              "./load-film-data": sinon.stub().returns(imdbFilmData)
-            });
-
         let dates = presentedListings.prepare([
           { film: "Heat", dateTime: moment() }
-        ]);
+        ], imdbFilmData);
 
         let filmListingsBlock = dates[0].films[0]
 

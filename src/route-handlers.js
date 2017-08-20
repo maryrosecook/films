@@ -8,6 +8,7 @@ let moment = require("moment-timezone");
 
 let db = require("./db");
 let loadListings = require("./load-listings");
+const loadFilmData = require("./load-film-data");
 let presentedListings = require("./presented-listings");
 
 const LISTINGS_PATH = path.relative(
@@ -25,7 +26,8 @@ function indexHandler(request, response) {
   moment.tz.setDefault("UTC");
   response.send(mustache.render(indexTemplate, {
     dates: presentedListings.prepare(
-      loadListings())
+      loadListings(),
+      loadFilmData())
   }, {
     filmInfo: filmInfoPartial,
     listings: listingsPartial
