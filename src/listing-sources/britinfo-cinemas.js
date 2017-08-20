@@ -1,8 +1,6 @@
 "use strict";
 
-let listing = require("../listing");
 let britinfo = require("../britinfo");
-const requestPromise = require("request-promise");
 
 let cinemas = [
   { url: "http://www.britinfo.net/cinema/cinema-listings-1003564.htm",
@@ -25,9 +23,7 @@ let cinemas = [
 
 exports.listings = function() {
   return Promise.all(cinemas.map((cinemaData) => {
-    return britinfo.listings(requestPromise,
-                             listing,
-                             cinemaData.url,
+    return britinfo.listings(cinemaData.url,
                              cinemaData.name);
   }));
 };

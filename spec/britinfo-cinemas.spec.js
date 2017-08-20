@@ -11,8 +11,6 @@ describe("scraping all britinfo cinemas", function() {
     let cinemaListings = proxyquire(
       "../src/listing-sources/britinfo-cinemas", {
         "../britinfo": britinfo,
-        "../listing": sinon.stub(),
-        "request-promise": sinon.stub()
       }).listings();
 
     expect(cinemaListings.then).toBeDefined();
@@ -20,27 +18,19 @@ describe("scraping all britinfo cinemas", function() {
 
   describe("scrapes all britinfo cinemas", () => {
     let britinfo;
-    let listing;
-    let requestPromise;
 
     beforeEach(function() {
       britinfo = { listings: sinon.stub() };
-      listing = sinon.stub();
-      requestPromise = sinon.stub();
 
       proxyquire(
         "../src/listing-sources/britinfo-cinemas", {
-          "../britinfo": britinfo,
-          "../listing": listing,
-          "request-promise": requestPromise
+          "../britinfo": britinfo
         }).listings();
     });
 
     it("scrapes Barbican", function() {
       expect(britinfo.listings.getCall(0).args)
         .toEqual([
-          requestPromise,
-          listing,
           "http://www.britinfo.net/cinema/cinema-listings-1003564.htm",
           "Barbican"]);
     });
@@ -48,8 +38,6 @@ describe("scraping all britinfo cinemas", function() {
     it("scrapes BFI", function() {
       expect(britinfo.listings.getCall(1).args)
         .toEqual([
-          requestPromise,
-          listing,
           "http://www.britinfo.net/cinema/cinema-listings-1003562.htm",
           "BFI Southbank"]);
     });
@@ -57,8 +45,6 @@ describe("scraping all britinfo cinemas", function() {
     it("scrapes Curzon Bloomsbury", function() {
       expect(britinfo.listings.getCall(2).args)
         .toEqual([
-          requestPromise,
-          listing,
           "http://www.britinfo.net/cinema/cinema-listings-1003744.htm",
           "Curzon Bloomsbury"]);
     });
@@ -66,8 +52,6 @@ describe("scraping all britinfo cinemas", function() {
     it("scrapes Curzon Soho", function() {
       expect(britinfo.listings.getCall(3).args)
         .toEqual([
-          requestPromise,
-          listing,
           "http://www.britinfo.net/cinema/cinema-listings-1003905.htm",
           "Curzon Soho"]);
     });
@@ -75,8 +59,6 @@ describe("scraping all britinfo cinemas", function() {
     it("scrapes BFI", function() {
       expect(britinfo.listings.getCall(4).args)
         .toEqual([
-          requestPromise,
-          listing,
           "http://www.britinfo.net/cinema/cinema-listings-1004176.htm",
           "Electric Cinema"]);
     });
@@ -84,8 +66,6 @@ describe("scraping all britinfo cinemas", function() {
     it("scrapes Curzon Aldgate", function() {
       expect(britinfo.listings.getCall(5).args)
         .toEqual([
-          requestPromise,
-          listing,
           "http://www.britinfo.net/cinema/cinema-listings-1212336.htm",
           "Curzon Aldgate"]);
     });
@@ -93,8 +73,6 @@ describe("scraping all britinfo cinemas", function() {
     it("scrapes Genesis", function() {
       expect(britinfo.listings.getCall(6).args)
         .toEqual([
-          requestPromise,
-          listing,
           "http://www.britinfo.net/cinema/cinema-listings-1004107.htm",
           "Genesis"]);
     });
@@ -102,8 +80,6 @@ describe("scraping all britinfo cinemas", function() {
     it("scrapes Vue Islington", function() {
       expect(britinfo.listings.getCall(7).args)
         .toEqual([
-          requestPromise,
-          listing,
           "http://www.britinfo.net/cinema/cinema-listings-1000171.htm",
           "Vue Islington"]);
     });

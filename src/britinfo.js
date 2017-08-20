@@ -3,12 +3,15 @@
 let cheerio = require("cheerio");
 let moment = require("moment-timezone");
 let _ = require("underscore");
+const requestPromise = require("request-promise");
+
+let listing = require("./listing");
 
 function pageContent(requestPromise, url) {
   return requestPromise(url);
 };
 
-function listings(requestPromise, listing, url, cinema) {
+function listings(url, cinema) {
   return pageContent(requestPromise, url)
     .then(_.partial(extractListings, listing, url, cinema));
 };
