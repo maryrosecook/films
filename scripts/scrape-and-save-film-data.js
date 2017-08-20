@@ -7,7 +7,7 @@ const _ = require("underscore");
 let scrapeTrailers = require("../src/scrape-trailers");
 const db = require("../src/db");
 const scrapeImdbFilmData = require("../src/scrape-imdb-film-data");
-const savedListingFilmNames = require("../src/saved-listing-film-names");
+const uniqueFilmNames = require("../src/unique-film-names");
 const loadListings = require("../src/load-listings");
 
 const FILMS_FILEPATH = path.join(__dirname,
@@ -46,7 +46,7 @@ function save(filmsFilepath, filmData) {
 };
 
 if (require.main === module) {
-  scrapeAndSaveFilmData(savedListingFilmNames(loadListings()));
+  scrapeAndSaveFilmData(uniqueFilmNames(loadListings()));
 }
 
 module.exports = scrapeAndSaveFilmData;

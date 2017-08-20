@@ -3,9 +3,9 @@
 let sinon = require("sinon");
 let proxyquire = require("proxyquire");
 
-let savedListingFilmNames = require("../src/saved-listing-film-names");
+let uniqueFilmNames = require("../src/unique-film-names");
 
-describe("#savedListingFilmNames", function() {
+describe("#uniqueFilmNames", function() {
   it("returns array of unique films", function() {
     let listings = [
       { film: "Margaret" },
@@ -13,7 +13,7 @@ describe("#savedListingFilmNames", function() {
       { film: "Heat" }
     ];
 
-    let films = savedListingFilmNames(listings);
+    let films = uniqueFilmNames(listings);
     expect(films[0]).toEqual("Margaret");
     expect(films[1]).toEqual("Heat");
   });

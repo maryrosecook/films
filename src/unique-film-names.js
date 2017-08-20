@@ -2,11 +2,9 @@
 
 const _ = require("underscore");
 
-function savedListingFilmNames(listings) {
+module.exports = function uniqueFilmNames(listings) {
   return _.chain(listings)
     .pluck("film")
     .uniq()
     .value()
 };
-
-module.exports = savedListingFilmNames;
