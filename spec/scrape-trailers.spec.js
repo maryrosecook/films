@@ -9,14 +9,12 @@ describe("#scrapeTrailers", function() {
   it("saves scraped trailers to db", function(done) {
     let write = sinon.stub();
     let scrapeTrailers = proxyquire("../src/scrape-trailers", {
-      "../src/saved-listing-film-names": sinon.stub()
-        .returns(["Margaret"]),
       "../src/youtube-search": sinon.stub()
         .resolves("https://www.youtube.com/watch?v=7YAiS-3EhMI"),
       "../src/imdb-search": sinon.stub().resolves(true),
     });
 
-    scrapeTrailers()
+    scrapeTrailers(["Margaret"])
       .then(function(trailers) {
         expect(trailers)
           .toEqual({
@@ -35,13 +33,11 @@ describe("#scrapeTrailers", function() {
       .resolves("https://www.youtube.com/watch?v=7YAiS-3EhMI");
 
     let scrapeTrailers = proxyquire("../src/scrape-trailers", {
-      "../src/saved-listing-film-names": sinon.stub()
-        .returns(["Heat", "Margaret"]),
       "../src/youtube-search": youtubeSearch,
       "../src/imdb-search": sinon.stub().resolves(true),
     });
 
-    scrapeTrailers()
+    scrapeTrailers(["Heat", "Margaret"])
       .then(function(trailers) {
         expect(trailers)
           .toEqual({
@@ -55,13 +51,11 @@ describe("#scrapeTrailers", function() {
     let write = sinon.stub();
     let youtubeSearch = sinon.stub();
     let scrapeTrailers = proxyquire("../src/scrape-trailers", {
-      "../src/saved-listing-film-names": sinon.stub()
-        .returns(["oentuh onethu onteh untoehu"]),
       "../src/youtube-search": youtubeSearch,
       "../src/imdb-search": sinon.stub().resolves(undefined)
     });
 
-    scrapeTrailers()
+    scrapeTrailers(["oentuh onethu onteh untoehu"])
       .then(function(trailers) {
         expect(Object.keys(trailers).length).toEqual(0);
         expect(youtubeSearch.callCount).toEqual(0);

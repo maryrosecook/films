@@ -6,12 +6,10 @@ let _ = require("underscore");
 
 let youtubeSearch = require("../src/youtube-search");
 const imdbSearch = require("../src/imdb-search");
-const savedListingFilmNames =
-      require("../src/saved-listing-film-names");
 
-function scrapeTrailers() {
-  return filterUnfindableFilms(savedListingFilmNames())
-    .then(trailerUrls)
+function scrapeTrailers(films) {
+  return filterUnfindableFilms(films)
+    .then(trailerUrls);
 };
 
 function filterUnfindableFilms(films) {

@@ -2,13 +2,11 @@
 
 const _ = require("underscore");
 
-let loadListings = require("../src/load-listings");
-
-function savedListingFilmNames() {
-  return _.chain(loadListings())
+function savedListingFilmNames(listings) {
+  return _.chain(listings)
     .pluck("film")
     .uniq()
-    .value();
+    .value()
 };
 
 module.exports = savedListingFilmNames;

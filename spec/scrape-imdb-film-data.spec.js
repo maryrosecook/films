@@ -9,9 +9,6 @@ describe("#scrapeImdbFilmData", function() {
   it("scrapes data for all film names", function(done) {
     let scrapeImdbFilmData =
         proxyquire("../src/scrape-imdb-film-data", {
-          "../src/saved-listing-film-names": sinon.stub().returns([
-            "Heat", "Margaret"
-          ]),
           "../src/imdb-search": sinon.stub().returns({
             title: "Heat",
             rating: "8.2",
@@ -20,7 +17,7 @@ describe("#scrapeImdbFilmData", function() {
           })
         });
 
-    scrapeImdbFilmData()
+    scrapeImdbFilmData(["Heat", "Margaret"])
       .then((filmData) => {
         let heat = filmData["Heat"];
         expect(heat.title).toEqual("Heat");

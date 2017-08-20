@@ -7,13 +7,15 @@ const _ = require("underscore");
 let scrapeTrailers = require("../src/scrape-trailers");
 const db = require("../src/db");
 const scrapeImdbFilmData = require("../src/scrape-imdb-film-data");
+const savedListingFilmNames = require("../src/saved-listing-film-names");
+const loadListings = require("../src/load-listings");
 
 const FILMS_FILEPATH = path.join(__dirname,
                                  "../data",
                                  "films.json");
 
-function scrapeAndSaveFilmData() {
-  return Promise.all([scrapeTrailers(), scrapeImdbFilmData()])
+function scrapeAndSaveFilmData(films) {
+  return Promise.all([scrapeTrailers(films), scrapeImdbFilmData(films)])
     .then(function(data) {
       let trailers = data[0];
       let filmData = data[1];
@@ -44,7 +46,7 @@ function save(filmsFilepath, filmData) {
 };
 
 if (require.main === module) {
-  scrapeAndSaveFilmData();
+  scrapeAndSaveFilmData(savedListingFilmNames(loadListings()));
 }
 
 module.exports = scrapeAndSaveFilmData;
