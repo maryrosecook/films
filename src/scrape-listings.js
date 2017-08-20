@@ -2,10 +2,10 @@ var listing = require("./listing");
 
 var _ = require("underscore");
 
-function scrapeListings(listingSources, requestPromise) {
+function scrapeListings(listingSources) {
   return Promise.all(
     listingSources.map(function(listingSource) {
-      return listingSource.listings(requestPromise, listing);
+      return listingSource.listings();
     }))
     .then(_.flatten);
 };

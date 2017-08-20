@@ -83,5 +83,27 @@ describe("scraping all britinfo cinemas", function() {
           "http://www.britinfo.net/cinema/cinema-listings-1000171.htm",
           "Vue Islington"]);
     });
+
+    it("scrapes Rich Mix", function() {
+      expect(britinfo.listings.getCall(8).args)
+        .toEqual([
+          "http://www.britinfo.net/cinema/cinema-listings-1131780.htm",
+          "Rich Mix"]);
+    });
+
+    it("scrapes Hackney Picturehouse", function() {
+      expect(britinfo.listings.getCall(9).args)
+        .toEqual([
+          "http://www.britinfo.net/cinema/cinema-listings-1176542.htm",
+          "Hackney Picturehouse"]);
+    });
+
+    it("scrapes Rio", function() {
+      expect(britinfo.listings.getCall(10).args)
+        .toEqual([
+          "http://www.britinfo.net/cinema/cinema-listings-1003766.htm",
+          "Rio"]);
+    });
+
   });
 });

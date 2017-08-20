@@ -18,7 +18,13 @@ let cinemas = [
   { url: "http://www.britinfo.net/cinema/cinema-listings-1004107.htm",
     name: "Genesis" },
   { url: "http://www.britinfo.net/cinema/cinema-listings-1000171.htm",
-    name: "Vue Islington" }
+    name: "Vue Islington" },
+  { url: "http://www.britinfo.net/cinema/cinema-listings-1131780.htm",
+    name: "Rich Mix" },
+  { url: "http://www.britinfo.net/cinema/cinema-listings-1176542.htm",
+    name: "Hackney Picturehouse" },
+  { url: "http://www.britinfo.net/cinema/cinema-listings-1003766.htm",
+    name: "Rio" }
 ];
 
 exports.listings = function() {
