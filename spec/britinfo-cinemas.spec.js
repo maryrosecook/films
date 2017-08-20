@@ -13,9 +13,9 @@ describe("scraping all britinfo cinemas", function() {
         "../britinfo": britinfo,
         "../listing": sinon.stub(),
         "request-promise": sinon.stub()
-      }).listings;
+      }).listings();
 
-    expect(cinemaListings().then).toBeDefined();
+    expect(cinemaListings.then).toBeDefined();
   });
 
   describe("scrapes all britinfo cinemas", () => {
@@ -28,13 +28,12 @@ describe("scraping all britinfo cinemas", function() {
       listing = sinon.stub();
       requestPromise = sinon.stub();
 
-      let cinemaListings = proxyquire(
+      proxyquire(
         "../src/listing-sources/britinfo-cinemas", {
           "../britinfo": britinfo,
           "../listing": listing,
           "request-promise": requestPromise
-        }).listings;
-      cinemaListings();
+        }).listings();
     });
 
     it("scrapes Barbican", function() {
