@@ -24,7 +24,9 @@ let cinemas = [
   { url: "http://www.britinfo.net/cinema/cinema-listings-1176542.htm",
     name: "Hackney Picturehouse" },
   { url: "http://www.britinfo.net/cinema/cinema-listings-1003766.htm",
-    name: "Rio" }
+    name: "Rio" },
+  { url: "http://www.britinfo.net/cinema/cinema-listings-1003989.htm",
+    name: "Picturehouse Central" }
 ];
 
 exports.listings = function() {

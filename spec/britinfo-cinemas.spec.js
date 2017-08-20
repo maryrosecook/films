@@ -105,5 +105,11 @@ describe("scraping all britinfo cinemas", function() {
           "Rio"]);
     });
 
+    it("scrapes Picturehouse Central", function() {
+      expect(britinfo.listings.getCall(11).args)
+        .toEqual([
+          "http://www.britinfo.net/cinema/cinema-listings-1003989.htm",
+          "Picturehouse Central"]);
+    });
   });
 });
