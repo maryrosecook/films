@@ -2,6 +2,7 @@
 
 let listing = require("../listing");
 let britinfo = require("../britinfo");
+const requestPromise = require("request-promise");
 
 let cinemas = [
   { url: "http://www.britinfo.net/cinema/cinema-listings-1003564.htm",
@@ -22,7 +23,7 @@ let cinemas = [
     name: "Vue Islington" }
 ];
 
-exports.listings = function(requestPromise) {
+exports.listings = function() {
   return Promise.all(cinemas.map((cinemaData) => {
     return britinfo.listings(requestPromise,
                              listing,

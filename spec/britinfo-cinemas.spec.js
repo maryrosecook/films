@@ -2,7 +2,6 @@
 
 const sinon = require("sinon");
 const proxyquire = require("proxyquire");
-const requestPromise = require("request-promise");
 
 const britinfoCinemas = require("../src/listing-sources/britinfo-cinemas");
 
@@ -12,26 +11,30 @@ describe("scraping all britinfo cinemas", function() {
     let cinemaListings = proxyquire(
       "../src/listing-sources/britinfo-cinemas", {
         "../britinfo": britinfo,
-        "../listing": sinon.stub()
+        "../listing": sinon.stub(),
+        "request-promise": sinon.stub()
       }).listings;
 
-    expect(cinemaListings(requestPromise).then).toBeDefined();
+    expect(cinemaListings().then).toBeDefined();
   });
 
   describe("scrapes all britinfo cinemas", () => {
     let britinfo;
     let listing;
+    let requestPromise;
 
     beforeEach(function() {
       britinfo = { listings: sinon.stub() };
       listing = sinon.stub();
+      requestPromise = sinon.stub();
 
       let cinemaListings = proxyquire(
         "../src/listing-sources/britinfo-cinemas", {
           "../britinfo": britinfo,
-          "../listing": listing
+          "../listing": listing,
+          "request-promise": requestPromise
         }).listings;
-      cinemaListings(requestPromise);
+      cinemaListings();
     });
 
     it("scrapes Barbican", function() {
