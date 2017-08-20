@@ -1,5 +1,6 @@
 "use strict";
 
+let listing = require("../listing");
 let britinfo = require("../britinfo");
 
 let cinemas = [
@@ -21,7 +22,7 @@ let cinemas = [
     name: "Vue Islington" }
 ];
 
-exports.listings = function(requestPromise, listing) {
+exports.listings = function(requestPromise) {
   return Promise.all(cinemas.map((cinemaData) => {
     return britinfo.listings(requestPromise,
                              listing,
