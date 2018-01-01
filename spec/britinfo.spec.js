@@ -1,6 +1,6 @@
 "use strict";
 
-let moment = require("moment");
+let moment = require("moment-timezone");
 let fs = require("fs-extra");
 let path = require("path");
 let _ = require("underscore");
