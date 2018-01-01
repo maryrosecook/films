@@ -32,7 +32,7 @@ describe("scraping barbican britinfo page", function() {
       expect(listings[0].dateTime)
         .toEqual(moment("2017-04-11T20:15:00Z"));
       expect(listings[0].film)
-        .toEqual("An Angel At My Table");
+        .toEqual("An Angel at My Table");
 
       done();
     });
