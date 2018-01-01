@@ -16,6 +16,10 @@ describe("scraping barbican britinfo page", function() {
   let cinema = "Barbican";
 
   beforeAll(() => {
+    moment.now = function() { // return to 2017, year test data was scraped
+      return 1483301700000;
+    };
+
     let pageContent = fs.readFileSync(
       path.join(__dirname, "./pages/barbican-britinfo.html"),
       "utf8");
